@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="pl"
-      className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased scroll-smooth scroll-pt-20`}
+      className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased scroll-smooth scroll-pt-80`}
     >
       <body className="">
         <Navbar></Navbar>
