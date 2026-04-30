@@ -175,7 +175,7 @@ const App = () => {
               </span>
               <h2 className="text-4xl md:text-5xl font-bold white-100 mb-12">Materiały i strategia</h2>
 
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid lg:grid-cols-3 gap-8">
                 {downloads.map((doc, idx) => (
                   <div key={idx} className="bg-white rounded-3xl p-8 shadow-xl">
                     <div className="w-12 h-12 flex items-center justify-center mb-6">
@@ -292,7 +292,7 @@ const App = () => {
               <span className="text-8xl font-extralight white-60 leading-none">06</span>
             </div>
             <div className="flex-1">
-              <span className="text-red-600 font-bold text-sm tracking-widest uppercase mb-2 block">
+              <span className="malina-100 font-bold tracking-widest uppercase mb-2 block">
                 — KONTAKT
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-16">Masz pytania?</h2>
