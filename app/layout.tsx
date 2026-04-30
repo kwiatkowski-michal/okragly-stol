@@ -40,52 +40,6 @@ export default function RootLayout({
   );
 }
 
-
-// function NavBar() {
-//   return (
-//     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b rounded-b-3xl border-gray-100">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="flex justify-between items-center h-20">
-//           <div className="flex items-center gap-4">
-//             <a href="/">
-//               <div className="flex items-center gap-2">
-//               <img src="/sus-navbar.svg" alt="SUS Logo" className="h-10 object-contain" />
-//               <div className="p-2">
-//                 <svg
-//                   viewBox="0 0 24 24"
-//                   className="w-5 h-5 shrink-0 text-[#FF4D4D]"
-//                   fill="none"
-//                   xmlns="http://www.w3.org/2000/svg"
-//                 >
-//                   <path
-//                     d="M6 18L18 6M6 6L18 18"
-//                     stroke="currentColor"
-//                     strokeWidth="1.5"
-//                     strokeLinecap="round"
-//                     strokeLinejoin="round"
-//                     vectorEffect="non-scaling-stroke"
-//                   />
-//                 </svg>
-
-//               </div>
-//               <img src="/pzu-navbar.svg" alt="PZU Logo" className="h-10 object-contain" />
-//             </div>
-//             </a>
-//           </div>
-//           <div id="nav-links" className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
-//             <a href="#o-wydarzeniu" className="hover:text-red-600 transition-colors">O wydarzeniu</a>
-//             <a href="#rejestracja" className="hover:text-red-600 transition-colors">Rejestracja</a>
-//             <a href="#agenda" className="hover:text-red-600 transition-colors">Agenda</a>
-//             <a href="#pobierz" className="hover:text-red-600 transition-colors">Do pobrania</a>
-//             <a href="#kontakt" className="hover:text-red-600 transition-colors border border-gray-200 px-4 py-2 rounded-full">Kontakt</a>
-//           </div>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// }
-
-
 function Footer() {
     return (
         <footer className="w-full bg-[#F2313E] text-white py-12 px-6 md:px-12 lg:px-24">

@@ -239,14 +239,10 @@ const App = () => {
           </div>
         </div>
 
-        {/* Background Decorative Rings */}
-        <div className="absolute bottom-0 right-0 opacity-40 mb-20 -mr-20 pointer-events-none">
-          <svg width="359" height="565" viewBox="0 0 359 565" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="179.346" cy="384.993" r="178.846" transform="rotate(-180 179.346 384.993)" fill="black" fillOpacity="0.01" stroke="#F2313E" />
-            <circle cx="179.346" cy="384.993" r="138.453" transform="rotate(-180 179.346 384.993)" fill="black" fillOpacity="0.01" stroke="#F2313E" />
-            <circle cx="179.346" cy="384.994" r="93.992" transform="rotate(-180 179.346 384.994)" fill="black" fillOpacity="0.01" stroke="#F2313E" />
-            <circle cx="179.346" cy="179.159" r="178.659" transform="rotate(-180 179.346 179.159)" fill="black" fillOpacity="0.01" stroke="#F2313E" />
-          </svg>
+        <div className="absolute top-20 right-[-230] md:right-[-250] lg:right-[-350] opacity-40 sm:w-1/2 h-full pointer-events-none visible">
+
+          <img src="/ornament.png" alt="Ornament" className="h-190 object-contain" />
+
         </div>
       </section>
 
