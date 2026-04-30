@@ -177,7 +177,7 @@ const App = () => {
 
               <div className="grid lg:grid-cols-3 gap-8">
                 {downloads.map((doc, idx) => (
-                  <div key={idx} className="bg-white rounded-3xl p-8 shadow-xl">
+                  <div key={idx} className="bg-white/85 backdrop-blur-lg border border-white/20 shadow-xl rounded-3xl p-6">
                     <div className="w-12 h-12 flex items-center justify-center mb-6">
                       <FileText className="w-25 h-25 malina-100" />
                     </div>
@@ -218,7 +218,7 @@ const App = () => {
                 </a>
               </div>
 
-              <div className="max-w-2xl p-8 border border-[#EBE0E0] rounded-[40px]">
+              <div className="max-w-2xl bg-white/70 backdrop-blur-lg p-8 border border-[#EBE0E0] rounded-[40px]">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex items-center justify-center w-12 h-12 bg-white border border-gray-100 rounded-xl shadow-sm">
                     <Bus className="text-[#F2313E] w-6 h-6" />
