@@ -37,12 +37,11 @@ function NavBar() {
   return (
     <>
       <div className="h-24 lg:h-32" />
-
       <nav 
         className={`
           fixed top-6 left-0 right-0 z-50 flex justify-center px-4
           transition-all duration-500 ease-in-out
-          ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
+          ${isVisible ? "translate-y-0" : "-translate-y-[150%]"} 
         `}
       >
         <div className={`
@@ -51,10 +50,10 @@ function NavBar() {
           border border-white/20 
           shadow-xl/3
           transition-all duration-500 ease-in-out
-          ${isOpen ? 'rounded-[2rem]' : 'rounded-[3rem]'} 
+          rounded-t-[3rem]
+          ${isOpen ? 'rounded-b-[2rem]' : 'rounded-b-[3rem]'} 
         `}>
           
-          {/* Header: Logo + Toggle - Stała wysokość zapobiega drżeniu */}
           <div className="px-6 lg:px-10">
             <div className="flex justify-between items-center h-16 lg:h-20">
               <div className="flex items-center gap-4">
@@ -86,7 +85,6 @@ function NavBar() {
             </div>
           </div>
 
-          {/* Wrapper Grid dla idealnie gładkiej animacji wysokości */}
           <div
             className={`
               lg:hidden grid transition-all duration-500 ease-in-out
@@ -94,7 +92,6 @@ function NavBar() {
             `}
           >
             <div className="overflow-hidden">
-              {/* Tutaj dajemy padding i border, żeby nie wpływały na wysokość w trakcie zamykania */}
               <div className="px-8 py-6 space-y-2 border-t border-gray-100/50 mx-6">
                 {navLinks.map((link, index) => (
                   <Link

@@ -45,9 +45,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 overflow-x-hidden">
-      
 
-      {/* Hero Section */}
       <section className="relative pt-16 pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
@@ -82,17 +80,12 @@ const App = () => {
             </div>
           </div>
         </div>
-
-        {/* Abstract Background Element (Red Circles) */}
-
         <div className="absolute top-20 right-[-130] md:right-[-250] lg:right-[-350] opacity-40 sm:w-1/2 h-full pointer-events-none visible">
-
           <img src="/ornament.png" alt="Ornament" className="h-150 object-contain" />
-
         </div>
       </section>
 
-      {/* 01. About Section */}
+      {/*01*/}
       <section id="o-wydarzeniu" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16 items-start">
@@ -129,7 +122,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 02. Agenda Section */}
+      {/*02*/}
       <section id="agenda" className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16">
@@ -162,7 +155,7 @@ const App = () => {
           </div>
         </div>
       </section>
-      {/* 03. Downloads Section */}
+      {/*03*/}
       <section id="pobierz" className="py-24">
         <div className="max-w-7xl mx-auto p-10 sm:px-6 lg:px-8 bg-malina-100 rounded-3xl">
           <div className="flex flex-col md:flex-row gap-16">
@@ -196,7 +189,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* 04. Registration Section */}
+      {/*04*/}
       <section id="rejestracja" className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16">
@@ -208,11 +201,9 @@ const App = () => {
                 — ZAPISY
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-8">Zarejestruj się</h2>
-
               <div className="max-w-2xl text-gray-600 mb-12 space-y-6">
                 <p>Udział w Ogólnopolskim Okrągłym Stole jest bezpłatny. Zapraszamy uczniów, studentów, przedstawicieli młodzieżowych rad, samorządów, organizacji pozarządowych, instytucji publicznych i środowisk akademickich.</p>
                 <p className="font-medium text-slate-800">Liczba miejsc jest ograniczona. Po rejestracji otrzymasz potwierdzenie e-mailem wraz z szczegółami logistycznymi.</p>
-
                 <a href="#" className="inline-flex items-center gap-3 px-10 py-4 bg-malina-100 text-white font-bold rounded-full hover:bg-[#CE1623] transition-all shadow-lg shadow-red-100">
                   Zarejestruj się <ArrowRight size={18} />
                 </a>
@@ -238,15 +229,11 @@ const App = () => {
             </div>
           </div>
         </div>
-
         <div className="absolute top-20 right-[-230] md:right-[-250] lg:right-[-350] opacity-40 sm:w-1/2 h-full pointer-events-none visible">
-
           <img src="/ornament.png" alt="Ornament" className="h-190 object-contain" />
-
         </div>
       </section>
-
-      {/* 05. Partners Section */}
+      {/*05*/}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16 mb-16">
@@ -260,7 +247,6 @@ const App = () => {
               <h2 className="text-4xl md:text-5xl font-bold">Organizatorzy i partnerzy</h2>
             </div>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { label: "ORGANIZATOR", name: "Stowarzyszenie Umarłych Statutów", logo: "/sus.svg" },
@@ -279,8 +265,7 @@ const App = () => {
           </div>
         </div>
       </section>
-
-      {/* 06. Contact Section */}
+      {/*06*/}
       <section id="kontakt" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16">
@@ -307,7 +292,6 @@ const App = () => {
                   </a>
                 </div>
               </div>
-
               <div className="grid md:grid-cols-2 gap-12 pt-12">
                 <div>
                   <h4 className="font-bold uppercase text-md mb-4 text-red-600">O STOWARZYSZENIU UMARŁYCH STATUTÓW</h4>
