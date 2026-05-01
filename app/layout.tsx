@@ -65,7 +65,7 @@ export default function RootLayout({
     <html
       suppressHydrationWarning
       lang="pl"
-      className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased dark scroll-smooth`}
+      className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased scroll-smooth`}
     >
       <head>
         {/* <link
@@ -94,6 +94,8 @@ export default function RootLayout({
     </html>
   );
 }
+
+
 
 function Footer() {
   return (

@@ -1,14 +1,3 @@
-// module.exports = {
-//   theme: {
-//     extend: {
-//       backdropBlur: {
-//         xs: '2px',
-//       }
-//     },
-//   },
-//   plugins: [],
-// }
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   // Włącza przełączanie motywu za pomocą klasy "dark"
@@ -25,6 +14,7 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "var(--primary)",
+        malina: "var(--malina)",
       },
     },
   },

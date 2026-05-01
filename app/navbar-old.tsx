@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useTheme } from 'next-themes';
+import { Menu, X } from 'lucide-react';
 import { IoIosClose, IoIosMenu } from 'react-icons/io';
-import { LuSun, LuMoon } from 'react-icons/lu';
-import { X } from 'lucide-react';
-import { ThemeToggle } from './ThemeToggle';
+import { ThemeToggle, ThemeToggleText } from './ThemeToggle';
+import { useTheme } from 'next-themes';
 
 const navLinks = [
   { name: "O wydarzeniu", href: "/#o-wydarzeniu" },
@@ -16,63 +15,55 @@ const navLinks = [
   { name: "Kontakt", href: "/#kontakt" },
 ];
 
-// --- KOMPONENT: Bezpieczny przełącznik dla menu mobilnego ---
-const MobileThemeToggle = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) return <div className="h-12 w-full bg-gray-200/50 animate-pulse rounded-2xl" />;
-
-  // Używamy resolvedTheme, aby wiedzieć dokładnie jaki tryb jest aktywny (nawet przy 'system')
-  const isDark = resolvedTheme === 'dark';
-
-  return (
-    <button
-      onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="flex items-center justify-between w-full p-2 mt-1 rounded-2xl ">
-        <span className="text-2xl font-bold hover:text-[#F2313E]">{isDark ? 'Jasny motyw' : 'Ciemny motyw'}</span>
-    </button>
-  );
-};
-
-export default function NavBar() {
+function NavBar() {
+  const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+ const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+    const controlNavbar = () => {
+      if (typeof window !== 'undefined') {
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+          setIsVisible(false);
+          setIsOpen(false);
+        } else {
+          setIsVisible(true);
+        }
+        setLastScrollY(window.scrollY);
+      }
+    };
 
-  // useEffect(() => {
-  //   const controlNavbar = () => {
-  //     if (typeof window !== 'undefined') {
-  //       if (window.scrollY > lastScrollY && window.scrollY > 100) {
-  //         setIsVisible(false);
-  //         setIsOpen(false);
-  //       } else {
-  //         setIsVisible(true);
-  //       }
-  //       setLastScrollY(window.scrollY);
-  //     }
-  //   };
-  //   window.addEventListener('scroll', controlNavbar);
-  //   return () => window.removeEventListener('scroll', controlNavbar);
-  // }, [lastScrollY]);
+    window.addEventListener('scroll', controlNavbar);
+    return () => window.removeEventListener('scroll', controlNavbar);
+  }, [lastScrollY]);
 
   return (
     <>
       <div className="h-24 lg:h-32" />
-      
-      <header
+      <nav
         className={`
-          fixed top-6 left-0 right-0 z-[100] flex flex-col items-center px-4 gap-2
+          fixed top-6 left-0 right-0 z-50 flex justify-center px-4
           transition-all duration-500 ease-in-out
-          ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-[150%] opacity-0"} 
+          ${isVisible ? "translate-y-0" : "-translate-y-[150%]"} 
         `}
       >
-        {/* ELEMENT 1: Główny Navbar (PASTYLKA) */}
-        <nav className="w-full max-w-7xl bg-white/75 dark:bg-[#1E1E1E]/50 backdrop-blur-md shadow-xl/2 dark:shadow-white border border-gray-200/50 dark:border-gray-200/5 rounded-[3rem] px-6 lg:px-10 h-16 lg:h-20 flex justify-between items-center transition-colors duration-300">
-          <Link href="/" className="flex items-center">
-             <div>
+        <div className={`
+          w-full max-w-7xl 
+          bg-gray-100/10 backdrop-blur-sm 
+          border border-gray-100/10
+          shadow-xl/3
+          transition-all duration-500 ease-in-out
+          rounded-t-[3rem]
+          ${isOpen ? 'rounded-b-[2rem]' : 'rounded-b-[3rem]'} 
+        `}>
+
+          <div className="px-6 lg:px-10">
+            <div className="flex justify-between items-center h-16 lg:h-20">
+              <div className="flex items-center gap-4">
+                <Link href="/" className="flex black-100  items-center gap-2">
+                  <div>
                     <svg height="30" viewBox="0 0 141 47" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M60.9489 14.9139C61.187 14.9139 61.3841 14.8935 61.5404 14.8547C61.6966 14.814 61.8212 14.7603 61.9142 14.6918C62.0073 14.6252 62.0725 14.5438 62.1097 14.4494C62.1451 14.3568 62.1635 14.2514 62.1635 14.1366C62.1635 13.8923 62.0483 13.6887 61.8176 13.5277C61.5851 13.3667 61.187 13.1908 60.6252 13.0039C60.3778 12.9188 60.1323 12.8188 59.8867 12.7078C59.6412 12.5967 59.4217 12.4561 59.2264 12.2877C59.0311 12.1192 58.8711 11.9138 58.7483 11.6732C58.6255 11.4326 58.5641 11.1384 58.5641 10.7941C58.5641 10.448 58.6292 10.1371 58.7594 9.86133C58.8896 9.58372 59.0739 9.34861 59.312 9.15428C59.5519 8.95995 59.8403 8.81005 60.1807 8.70641C60.5192 8.60277 60.9024 8.55098 61.3284 8.55098C61.8344 8.55098 62.2715 8.60467 62.6398 8.71201C63.01 8.81936 63.3132 8.93779 63.5514 9.06735L63.064 10.3943C62.8538 10.287 62.6211 10.1907 62.3644 10.1093C62.1077 10.026 61.799 9.98532 61.4381 9.98532C61.0326 9.98532 60.7423 10.0408 60.5656 10.1519C60.387 10.2629 60.2997 10.4332 60.2997 10.6645C60.2997 10.8015 60.3312 10.9162 60.3963 11.0087C60.4614 11.1031 60.5545 11.1864 60.6735 11.2623C60.7926 11.3382 60.9302 11.4067 61.0846 11.4677C61.2409 11.5288 61.4121 11.5917 61.6 11.6565C61.9906 11.8009 62.3291 11.9416 62.6193 12.0822C62.9076 12.2229 63.1476 12.3857 63.3392 12.5727C63.5308 12.7596 63.6741 12.9799 63.769 13.2316C63.862 13.4833 63.9085 13.7886 63.9085 14.1476C63.9085 14.8454 63.663 15.3858 63.1719 15.7708C62.6808 16.1557 61.9404 16.3482 60.9489 16.3482C60.6178 16.3482 60.3164 16.3279 60.0504 16.289C59.7826 16.2483 59.5463 16.2002 59.3398 16.1428C59.1333 16.0854 58.9567 16.0243 58.8079 15.9595C58.6609 15.8948 58.5361 15.8337 58.4338 15.7764L58.912 14.4383C59.1352 14.5604 59.4123 14.6714 59.7416 14.7677C60.069 14.8657 60.4727 14.9139 60.9489 14.9139Z" fill="currentColor" />
                       <path d="M65.2106 9.11174L66.8252 8.85265V10.5239H68.7653V11.862H66.8252V13.8571C66.8252 14.194 66.8847 14.4642 67.0037 14.6659C67.1228 14.8677 67.3627 14.9676 67.7255 14.9676C67.8985 14.9676 68.077 14.951 68.2612 14.9195C68.4453 14.8862 68.6127 14.8418 68.7653 14.7844L68.9923 16.0355C68.797 16.115 68.5812 16.1835 68.3431 16.2409C68.1031 16.2982 67.811 16.326 67.465 16.326C67.0241 16.326 66.6577 16.2668 66.3694 16.1483C66.081 16.0299 65.8486 15.8652 65.6756 15.6524C65.5026 15.4396 65.3817 15.1842 65.3128 14.8806C65.244 14.579 65.2106 14.2439 65.2106 13.8774V9.11174Z" fill="currentColor" />
@@ -108,7 +99,7 @@ export default function NavBar() {
                     </svg>
 
                   </div>
-                  <div className="px-2 text-malina">
+                  <div className="px-1 text-[#FF4D4D]">
                     <X size={16} />
                   </div>
                   <div>
@@ -127,58 +118,64 @@ export default function NavBar() {
                       <path d="M144.986 54.7783L144.411 53.0853H140.955L140.368 54.7783H138.388L141.927 45.2132H143.416L146.967 54.7783H144.988H144.986ZM142.718 48.0341L141.489 51.5139H143.906L142.718 48.0341Z" fill="currentColor" />
                     </svg>
                   </div>
-          </Link>
+      
+                </Link>
+              </div>
 
-          {/* Desktopowe Menu */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="text-sm font-medium black-60 dark:hover:text-white hover:text-black transition-colors">
-                {link.name}
-              </Link>
-            ))}
-            <ThemeToggle />
+              <div className='hidden lg:flex items-center space-x-8 text-sm font-semibold ${theme === "dark" ? "text-gray-300" : "text-gray-700"}'>
+                {navLinks.map((link) => (
+                  <Link key={link.name} href={link.href} className="hover:text-[#F2313E] transition-colors">
+                    {link.name}
+                  </Link>
+                ))}
+                <ThemeToggle />
+              </div>
+
+              <div className="lg:hidden">
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className='${theme === "dark" ? "text-gray-300" : "text-gray-700"} p-2 focus:outline-none transition-transform active:scale-90'
+                >
+                  {isOpen ? <IoIosClose size={35} /> : <IoIosMenu size={28} />}
+                </button>
+              </div>
+            </div>
           </div>
 
-          {/* Przycisk Hamburgera */}
-          <button 
-            className="p-2 black-100 active:scale-90 transition-transform lg:hidden"
-            onClick={() => setIsOpen(!isOpen)}
+          <div
+            className={`
+              lg:hidden grid transition-all duration-500 ease-in-out
+              ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}
+            `}
           >
-            {isOpen ? <IoIosClose size={35} /> : <IoIosMenu size={28} />}
-          </button>
-        </nav>
+            <div className="overflow-hidden">
+              <div className="px-8 py-6 space-y-2 border-t border-gray-100/50 mx-6">
+                {navLinks.map((link, index) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    style={{
+                      transitionDelay: isOpen ? `${index * 40}ms` : '0ms',
+                    }}
+                    className={`
+                      block text-lg font-medium py-3 ${!mounted ? "text-gray-700" : theme === "dark" ? "text-gray-300" : "text-gray-700"}
+                      hover:text-[#F2313E] transition-all transform
+                      ${isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}
+                    `}
+                  >
+                    {link.name}
 
-        {/* ELEMENT 2: Menu Mobilne (ODDZIELNE) */}
-        <div 
-          className={`
-            lg:hidden w-full max-w-7xl overflow-hidden
-            bg-white/75 dark:bg-[#1E1E1E]/50 backdrop-blur-md 
-      
-            rounded-[2.5rem] shadow-2xl transition-all duration-500 ease-in-out
-            ${isOpen ? 'max-h-[600px] opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95 pointer-events-none'}
-          `}
-        >
-          <div className="p-8 flex flex-col gap-2">
-            {navLinks.map((link, index) => (
-              <Link 
-                key={link.href} 
-                href={link.href} 
-                onClick={() => setIsOpen(false)}
-                className={`
-                  text-2xl font-bold py-3 px-2 
-                  black-100 hover:text-[#F2313E] 
-                  ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}
-                `}
-                style={{ }}
-              >
-                {link.name}
-              </Link>
-            ))}
-            
-            <MobileThemeToggle />
+                  </Link>
+                ))}
+                <ThemeToggleText />
+              </div>
+            </div>
           </div>
         </div>
-      </header>
+      </nav>
     </>
   );
 }
+
+export default NavBar;

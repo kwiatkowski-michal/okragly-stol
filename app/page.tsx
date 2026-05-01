@@ -41,7 +41,7 @@ const App = () => {
       <section className="relative pt-16 pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
-            <span className="text-[#F2313E] font-bold text-sm tracking-widest uppercase mb-4 block">
+            <span className="text-malina font-bold text-sm tracking-widest uppercase mb-4 block">
               — WYDARZENIE OGÓLNOPOLSKIE
             </span>
             <h1 className="text-5xl md:text-7xl font-extrabold black-100 mb-8">
@@ -54,19 +54,19 @@ const App = () => {
             <div className="rounded-lg text-sm gap-8 mb-12 pt-8">
               <div className="grid grid-cols-[auto_1fr] gap-x-12 gap-y-6 items-baseline">
                 <span className="black-80 uppercase font-bold tracking-wider">Data</span>
-                <span className="text-[#F2313E] uppercase font-medium">25 Maja 2026</span>
+                <span className="text-malina uppercase font-medium">25 Maja 2026</span>
                 <span className="black-80 uppercase font-bold tracking-wider">Miejsce</span>
-                <span className="text-[#F2313E] uppercase font-medium">Warszawa</span>
+                <span className="text-malina uppercase font-medium">Warszawa</span>
                 <span className="black-80 uppercase font-bold tracking-wider">Forma</span>
-                <span className="text-[#F2313E] uppercase font-medium">Wydarzenie stacjonarne i udział bezpłatny</span>
+                <span className="text-malina uppercase font-medium">Wydarzenie stacjonarne i udział bezpłatny</span>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <a href="#agenda" className="px-8 py-4 border-2 black-100 font-bold rounded-full  hover:text-white transition-all flex items-center gap-2">
+              <a href="#agenda" className="px-8 py-4 border-2 black-100 font-bold rounded-full dark:hover:bg-white/10 transition-all flex items-center gap-2">
                 Agenda <MdOutlineArrowForwardIos />
               </a>
-              <a href="#rejestracja" className="px-8 py-4 bg-malina-100 text-white font-bold rounded-full transition-all shadow-lg flex items-center gap-2">
+              <a href="#rejestracja" className="px-8 py-4 bg-malina text-white font-bold rounded-full transition-all shadow-xl shadow-malina/30 hover:bg-[#CE1623] flex items-center gap-2">
                 Zarejestruj się <MdOutlineArrowForwardIos />
               </a>
             </div>
@@ -85,11 +85,10 @@ const App = () => {
               <span className="font-special text-8xl  white-60 leading-none">01</span>
             </div>
             <div className="flex-1">
-              <span className="text-[#F2313E] font-bold text-sm tracking-widest uppercase mb-2 block">
+              <span className="text-malina font-bold text-sm tracking-widest uppercase mb-2 block">
                 — O WYDARZENIU
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-8">Nic o nich bez nich.</h2>
-
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="space-y-6 black-80 leading-relaxed">
                   <p>
@@ -98,14 +97,13 @@ const App = () => {
                     Ogólnopolski Okrągły Stół to jedno z kluczowych wydarzeń w procesie konsultacji społecznych. Organizujemy je wspólnie — Stowarzyszenie Umarłych Statutów (SUS) i Fundacja PZU — bo wierzymy, że strategia dla młodych musi powstawać z młodymi.
                   </p>
                   <p>Podczas spotkania uczniowie, studenci, samorządowcy, eksperci i przedstawiciele organizacji pozarządowych zasiądą przy jednym stole, by dyskutować o tym, co naprawdę zmienić w obszarach edukacji, zdrowia psychicznego, rynku pracy i aktywności obywatelskiej. Wnioski trafią bezpośrednio do Ministerstwa Edukacji Narodowej.</p>
-                  <div className="pl-10 mt-20 border-l-4 border-[#F2313E] rounded-r-2xl">
+                  <div className="pl-10 mt-20 border-l-4 border-malina rounded-r-2xl">
                     <h3 className="black-100 text-lg font-bold mb-2">„Nic o nich bez nich. I to powinno nam przyświecać przez najbliższe miesiące pracy.”</h3>
                     <p className="text-md font-light black-60">— Barbara Nowacka, Minister Edukacji Narodowej</p>
                   </div>
                 </div>
-
-                <div className="pl-10 lg:ml-20 border-l-4 border-[#F2313E] rounded-r-2xl self-start">
-                  <p className="text-[#F2313E] font-bold text-sm tracking-widest uppercase mb-2 block">DLACZEGO TO WAŻNE?</p>
+                <div className="pl-10 lg:ml-20 border-l-4 border-malina rounded-r-2xl self-start">
+                  <p className="text-malina font-bold text-sm tracking-widest uppercase mb-2 block">DLACZEGO TO WAŻNE?</p>
                   <p className="text-sm font-light black-60">Raport „Diagnoza Młodzieży 2026" pokazuje, że 60% nastolatków żyje w chronicznym stresie, a 40% wykazuje objawy depresyjne. To obraz, którego nie można ignorować — i który wymaga systemowej odpowiedzi.</p>
                 </div>
               </div>
@@ -122,7 +120,7 @@ const App = () => {
               <span className="font-special text-8xl font-extralight white-60 leading-none">02</span>
             </div>
             <div className="flex-1">
-              <span className="text-[#F2313E] font-bold text-sm tracking-widest uppercase mb-2 block">
+              <span className="text-malina font-bold text-sm tracking-widest uppercase mb-2 block">
                 — PROGRAM
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-12">Agenda dnia</h2>
@@ -135,7 +133,7 @@ const App = () => {
                       <span className="text-2xl font-bold black-80">{item.time}</span>
                     </div>
                     <div className="flex-1">
-                      <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider mb-4 text-[#F2313E] border-1 border-malina-100">
+                      <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider mb-4 text-malina border-1 border-malina-100">
                         {item.tag}
                       </span>
                       <h3 className="text-xl font-bold mb-2">{item.title}</h3>
@@ -150,28 +148,28 @@ const App = () => {
       </section>
       {/*03*/}
       <section id="pobierz" className="py-24">
-        <div className="max-w-7xl mx-auto p-10 sm:px-6 lg:px-8 bg-[#F2313E] rounded-3xl">
+        <div className="max-w-7xl mx-auto p-10 sm:px-6 lg:px-8 bg-malina dark:border-1 dark:border-malina dark:bg-transparent shadow-xl shadow-malina/30 rounded-3xl">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-24 shrink-0">
-              <span className="text-8xl font-special white-60 leading-none">03</span>
+              <span className="text-8xl font-special text-white leading-none">03</span>
             </div>
             <div className="flex-1">
-              <span className="white-100 font-bold text-sm tracking-widest uppercase mb-2 block">
+              <span className="white-100 font-bold text-white text-sm tracking-widest uppercase mb-2 block">
                 — DO POBRANIA
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold white-100 mb-12">Materiały i strategia</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">Materiały i strategia</h2>
               <div className="grid lg:grid-cols-3 gap-8">
                 {downloads.map((doc, idx) => (
-                  <div key={idx} className="bg-white  border border-white/20 shadow-xl rounded-3xl p-6">
+                  <div key={idx} className="bg-white dark:bg-white/5 backdrop-blur-md border border-white/5 shadow-xl rounded-3xl p-6">
                     <div className="w-12 h-12 flex items-center justify-center mb-6">
-                      <IoIosDocument className="w-25 h-25 text-[#F2313E]" />
+                      <IoIosDocument className="w-25 h-25 text-malina" />
                     </div>
-                    <span className="text-[#F2313E] font-bold text-[13px] tracking-widest block uppercase">RAPORT</span>
-                    <h3 className="text-xl font-bold text-[#1E1E1E] mb-4">{doc.title}</h3>
-                    <p className="text-[#1E1E1E] text-md mb-8 leading-relaxed">{doc.description}</p>
+                    <span className="text-malina font-bold text-[13px] tracking-widest block uppercase">RAPORT</span>
+                    <h3 className="text-xl font-bold  mb-4">{doc.title}</h3>
+                    <p className=" text-md mb-8 leading-relaxed">{doc.description}</p>
                     <a
                       href={doc.link || "#"}
-                      className="w-full py-3 text-[#F2313E] border border-[#F2313E] rounded-full font-bold text-sm transition-all flex flex-row items-center justify-center gap-2 whitespace-nowrap"
+                      className="w-full py-3 text-malina dark:text-white border border-malina dark:border-white rounded-full font-bold text-sm transition-all flex flex-row items-center justify-center gap-2 whitespace-nowrap"
                     >
                       <span className="mt-[2px]">Pobierz</span> <IoIosDownload size={20} />
                     </a>
@@ -200,15 +198,15 @@ const App = () => {
                 <p>Udział w Ogólnopolskim Okrągłym Stole jest bezpłatny. Zapraszamy uczniów, studentów, przedstawicieli młodzieżowych rad, samorządów, organizacji pozarządowych, instytucji publicznych i środowisk akademickich.</p>
                 <p className="font-medium black-80">Liczba miejsc jest ograniczona. Po rejestracji otrzymasz potwierdzenie e-mailem wraz z szczegółami logistycznymi.</p>
                 <p>Rejestracja aktywna od 6 maja 2026 r.</p>
-                <a href="#" className="inline-flex items-center gap-3 px-10 py-4 bg-malina-100 text-white font-bold rounded-full hover:bg-[#CE1623] transition-all">
+                <a href="#" className="inline-flex items-center gap-3 px-10 py-4 bg-malina text-white font-bold rounded-full hover:bg-[#CE1623] shadow-xl shadow-malina/30 transition-all">
                   Zarejestruj się <MdOutlineArrowForwardIos size={16} />
                 </a>
               </div>
 
-              <div className="max-w-2xl p-8 border border-[#EBE0E0] rounded-[40px]">
+              <div className="max-w-2xl p-8 border border-[#EBE0E0] shadow-xl dark:shadow-white/5 rounded-[40px]">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex items-center justify-center w-12 h-12">
-                    <IoIosBus className="text-[#F2313E] w-10 h-10" />
+                    <IoIosBus className="text-malina w-10 h-10" />
                   </div>
                   <h2 className="text-xl font-bold black-100">
                     Zwrot kosztów przejazdu
@@ -218,7 +216,7 @@ const App = () => {
                   Dla uczestników przyjeżdżających z innych miast organizatorzy{" "}
                   <span className="font-bold black-80">zapewniają zwrot kosztów przejazdu.</span>
                 </p>
-                <a href="/zwrot-kosztow" className="inline-flex items-center gap-3 px-8 py-3 border-2 border-[#FF4D4D] rounded-full text-[#F2313E] font-semibold transition-all hover:bg-[#F2313E] hover:text-white">
+                <a href="/zwrot-kosztow" className="inline-flex items-center gap-3 px-8 py-3 border-2 border-malina rounded-full text-malina font-semibold transition-all hover:bg-malina hover:text-white">
                   Jak skorzystać? <MdOutlineArrowForwardIos size={16} />
                 </a>
               </div>
@@ -292,13 +290,13 @@ const App = () => {
               </div>
               <div className="grid md:grid-cols-2 gap-12 pt-12">
                 <div>
-                  <h4 className="font-bold uppercase text-md mb-4 text-[#F2313E]">O STOWARZYSZENIU UMARŁYCH STATUTÓW</h4>
+                  <h4 className="font-bold uppercase text-md mb-4 text-malina">O STOWARZYSZENIU UMARŁYCH STATUTÓW</h4>
                   <p className="black-60 text-md leading-relaxed">
                     SUS to pierwsza i największa w Polsce organizacja broniąca praw uczniów, działająca od 2018 roku. Zrzesza uczniów i studentów, którzy monitorują stan edukacji i interweniują w przypadkach łamania prawa w szkołach.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-bold uppercase text-md mb-4 text-[#F2313E]">O FUNDACJI PZU</h4>
+                  <h4 className="font-bold uppercase text-md mb-4 text-malina">O FUNDACJI PZU</h4>
                   <p className="black-60 text-md leading-relaxed">
                     Fundacja PZU prowadzi działania filantropijne od 2004 roku. W 2026 roku — we współpracy z Fundacją Civis Polonus — koordynuje ogólnopolski proces konsultacji nad Krajową Strategią Młodzieżową.
                   </p>
