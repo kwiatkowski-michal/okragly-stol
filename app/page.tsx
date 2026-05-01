@@ -248,7 +248,7 @@ const App = () => {
               { label: "ORGANIZATOR", name: "Stowarzyszenie Umarłych Statutów", logo: "/sus.svg", link: "https://sus.org.pl" },
               { label: "PARTNER", name: "Fundacja PZU", logo: "/pzu.svg", link: "https://fundacja.pzu.pl" },
               { label: "PATRONAT HONOROWY", name: "Ministerstwo Edukacji Narodowej", logo: "/men.svg", link: "https://gov.pl/edukacja" },
-              { label: "PARTNER", name: "Narodowy Instytut Wolności", logo: "/niw.svg", link: "https://niw.edu.pl" }
+              { label: "PARTNER", name: "Narodowy Instytut Wolności", logo: "/niw.svg", link: "https://niw.gov.pl" }
             ].map((partner, i) => (
               <a key={i} href={partner.link} target="_blank" rel="noopener noreferrer" className="h-full">
               <div key={i} className="bg-gray-100/80 p-8 h-full rounded-2xl border border-gray-100/10 text-center hover:shadow-sm transition-shadow">
