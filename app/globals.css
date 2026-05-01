@@ -1,28 +1,28 @@
 @import "tailwindcss";
 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --malina-100: #F2313E;
+  /* Tryb jasny */
+  --background: #FEF8F8;
+  --foreground: #1E1E1E;
 }
+
+.dark {
+  /* Tryb ciemny */
+  --background: #1E1E1E;
+  --foreground: #FEF8F8;
+}
+
+
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-malina-100: var(--malina-100);
+  --font-sans: var(--font-manrope);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #090606;
-    --foreground: #ededed;
-    --font-sans: var(--font-manrope);
-  }
-} */
-
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: var(--font-manrope);
 }
 
@@ -53,22 +53,37 @@ a{
 
 .black-20{
   color: #A5A5A5;
+  .dark &{
+    color: white;
+  }
 }
 
 .black-40{
   color: #787878;
+  .dark &{
+    color: #D5CDCD;
+  }
 }
 
 .black-60{
   color: #787878;
+  .dark &{
+    color: #D8C8C8;
+  }
 }
 
 .black-80{
   color: #4B4B4B;
+  .dark &{
+    color: #FEF8F8;
+  }
 }
 
 .black-100{
   color: #1E1E1E;
+  .dark &{
+    color: #FFFBFB;
+  }
 }
 
 .malina-100{

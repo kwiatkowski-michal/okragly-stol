@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import { IoIosClose, IoIosMenu } from 'react-icons/io';
+import { ThemeToggle, ThemeToggleText } from './ThemeToggle';
+import { useTheme } from 'next-themes';
 
 const navLinks = [
   { name: "O wydarzeniu", href: "/#o-wydarzeniu" },
@@ -13,6 +16,7 @@ const navLinks = [
 ];
 
 function NavBar() {
+  const { theme, setTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -46,8 +50,8 @@ function NavBar() {
       >
         <div className={`
           w-full max-w-7xl 
-          bg-white/60 backdrop-blur-sm 
-          border border-white/20 
+          ${theme === "dark" ? "bg-gray-800/50 border-black/20" : " bg-white/50 border-white/20"} backdrop-blur-sm 
+          border 
           shadow-xl/3
           transition-all duration-500 ease-in-out
           rounded-t-[3rem]
@@ -58,28 +62,33 @@ function NavBar() {
             <div className="flex justify-between items-center h-16 lg:h-20">
               <div className="flex items-center gap-4">
                 <Link href="/" className="flex items-center gap-2">
-                  <img src="/sus-navbar.svg" alt="SUS Logo" className="h-8 lg:h-10 object-contain" />
+                  {theme === "light" ? ( <img src="/sus-navbar.svg" alt="SUS Logo" className="h-8 lg:h-10 object-contain" /> ) : (
+                    <img src="/sus-navbar-white.svg" alt="SUS Logo" className="h-8 lg:h-10 object-contain" />
+                  )}
                   <div className="px-1 text-[#FF4D4D]">
                     <X size={16} />
                   </div>
-                  <img src="/pzu-navbar.svg" alt="PZU Logo" className="h-8 lg:h-10 object-contain" />
+                  {theme === "light" ? ( <img src="/pzu-navbar.svg" alt="PZU Logo" className="h-8 lg:h-10 object-contain" /> ) : (
+                    <img src="/pzu-navbar-white.svg" alt="PZU Logo" className="h-8 lg:h-10 object-contain" />
+                  )}
                 </Link>
               </div>
 
-              <div className="hidden lg:flex items-center space-x-8 text-sm font-semibold text-gray-700">
+              <div className='hidden lg:flex items-center space-x-8 text-sm font-semibold ${theme === "dark" ? "text-gray-300" : "text-gray-700"}'>
                 {navLinks.map((link) => (
-                  <Link key={link.name} href={link.href} className="hover:text-red-600 transition-colors">
+                  <Link key={link.name} href={link.href} className="hover:text-[#F2313E] transition-colors">
                     {link.name}
                   </Link>
                 ))}
+                <ThemeToggle />
               </div>
 
               <div className="lg:hidden">
                 <button
                   onClick={() => setIsOpen(!isOpen)}
-                  className="text-gray-600 p-2 focus:outline-none transition-transform active:scale-90"
+                  className='${theme === "dark" ? "text-gray-300" : "text-gray-700"} p-2 focus:outline-none transition-transform active:scale-90'
                 >
-                  {isOpen ? <X size={28} /> : <Menu size={28} />}
+                  {isOpen ? <IoIosClose size={35} /> : <IoIosMenu size={28} />}
                 </button>
               </div>
             </div>
@@ -102,14 +111,16 @@ function NavBar() {
                         transitionDelay: isOpen ? `${index * 40}ms` : '0ms',
                     }}
                     className={`
-                      block text-lg font-medium py-3 text-gray-700 
-                      hover:text-red-600 transition-all transform
+                      block text-lg font-medium py-3 ${theme === "dark" ? "text-gray-300" : "text-gray-700"}
+                      hover:text-[#F2313E] transition-all transform
                       ${isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}
                     `}
                   >
                     {link.name}
+                    
                   </Link>
                 ))}
+                <ThemeToggleText />
               </div>
             </div>
           </div>

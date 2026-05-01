@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Manrope, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import Navbar from "./navbar";
+import { ThemeProvider } from "./theme-provider";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -26,15 +27,18 @@ export default function RootLayout({
 }>) {
   return (
     <html
+    suppressHydrationWarning
       lang="pl"
-      className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased scroll-smooth scroll-pt-90`}
+      className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased dark scroll-smooth scroll-pt-90`}
     >
       <body className="">
-        <Navbar></Navbar>
+        <ThemeProvider>
+          <Navbar/>
 
 
         {children}
         <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
@@ -45,19 +49,14 @@ function Footer() {
         <footer className="w-full bg-[#F2313E] text-white py-12 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-          
-          {/* Kolumna 1: Main Logo & Event Name */}
           <div className="space-y-6">
             <div className="flex items-center gap-4">
-              {/* Tutaj Twój szklany logotyp/ozdobnik */}
               <img src="stol.png" alt="Okrągły Stół Logo" className="h-12 w-auto opacity-90 invert brightness-0 pointer-events-none" />
             </div>
             <p className="text-sm opacity-90 font-light">
               Partnerem wydarzenia jest Fundacja PZU
             </p>
           </div>
-
-          {/* Kolumna 2: Links & Copyright */}
           <div className="flex flex-col space-y-8 text-sm">
             <div className="space-y-2">
               <Link href="https://umarlestatuty.pl/polityka-prywatnosci" className="block hover:underline opacity-90">
