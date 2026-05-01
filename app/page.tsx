@@ -82,7 +82,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16 items-start">
             <div className="w-24">
-              <span className="text-8xl font-extralight white-60 leading-none">01</span>
+              <span className="font-special text-8xl  white-60 leading-none">01</span>
             </div>
             <div className="flex-1">
               <span className="text-[#F2313E] font-bold text-sm tracking-widest uppercase mb-2 block">
@@ -118,8 +118,8 @@ const App = () => {
       <section id="agenda" className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16">
-            <div className="w-24 shrink-0">
-              <span className="text-8xl font-extralight white-60 leading-none">02</span>
+            <div className="font-special w-24 shrink-0">
+              <span className="font-special text-8xl font-extralight white-60 leading-none">02</span>
             </div>
             <div className="flex-1">
               <span className="text-[#F2313E] font-bold text-sm tracking-widest uppercase mb-2 block">
@@ -153,7 +153,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto p-10 sm:px-6 lg:px-8 bg-[#F2313E] rounded-3xl">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-24 shrink-0">
-              <span className="text-8xl font-extralight white-60 leading-none">03</span>
+              <span className="text-8xl font-special white-60 leading-none">03</span>
             </div>
             <div className="flex-1">
               <span className="white-100 font-bold text-sm tracking-widest uppercase mb-2 block">
@@ -189,7 +189,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-24">
-              <span className="text-8xl font-extralight white-60 leading-none">04</span>
+              <span className="font-special text-8xl font-extralight white-60 leading-none">04</span>
             </div>
             <div className="flex-1">
               <span className="malina-100 font-bold text-sm tracking-widest uppercase mb-2 block">
@@ -234,7 +234,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16 mb-16">
             <div className="w-24">
-              <span className="text-8xl font-extralight white-60 leading-none">05</span>
+              <span className="text-8xl font-special white-60 leading-none">05</span>
             </div>
             <div>
               <span className="malina-100 font-bold text-sm tracking-widest uppercase mb-2 block">
@@ -268,7 +268,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-24">
-              <span className="text-8xl font-extralight white-60 leading-none">06</span>
+              <span className="font-special text-8xl font-extralight white-60 leading-none">06</span>
             </div>
             <div className="flex-1">
               <span className="malina-100 font-bold tracking-widest uppercase mb-2 block">

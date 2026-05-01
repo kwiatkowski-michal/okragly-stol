@@ -31,6 +31,11 @@ h1, h2, h3, h4{
 
 }
 
+.font-special{
+  font-family: var(--font-bricolage-grotesque);
+  font-weight: 200;
+}
+
 a{
   font-family: var(--font-bricolage-grotesque);
 }
