@@ -216,8 +216,8 @@ const App = () => {
       </section>
 
       {/*04*/}
-      <section id="rejestracja" className="py-24 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="rejestracja" className="py-24  relative overflow-hidden">
+        <div className="max-w-7xl h-228 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-24">
               <span className="font-special text-8xl font-extralight text-[#D8C8C8] leading-none">04</span>
@@ -236,7 +236,7 @@ const App = () => {
                 </a>
               </div>
 
-              <div className="max-w-2xl p-8 border border-[#EBE0E0] shadow-xl dark:shadow-white/5 rounded-[40px]">
+              <div className="absolute z-10 max-w-2xl mr-4 h-auto p-8 border border-black/10 dark:border-white/10 shadow-xl dark:shadow-white/10 bg-white/1 dark:bg-white/5 backdrop-blur-sm rounded-[40px]">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex items-center justify-center w-12 h-12">
                     <IoIosBus className="text-malina w-10 h-10" />
@@ -256,7 +256,7 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="absolute top-20 right-[-230] md:right-[-250] lg:right-[-350] opacity-40 sm:w-1/2 h-full pointer-events-none visible">
+        <div className="absolute z-1 top-20 right-[-230] md:right-[-250] lg:right-[-350] opacity-40 sm:w-1/2 h-full pointer-events-none visible">
           <img src="/ornament.png" alt="Ornament" className="h-190 object-contain" />
         </div>
       </section>
