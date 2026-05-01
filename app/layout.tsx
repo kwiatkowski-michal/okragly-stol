@@ -72,12 +72,12 @@ function Footer() {
             </div>
           </div>
           <div className="flex flex-col items-start md:items-end space-y-8">
-             <div className="h-12 w-auto opacity-100 invert brightness-0 pointer-events-none">
-                <img src="/sus-navbar.svg" alt="SUS Logo" className="h-full" />
-             </div>
-             <div className="h-10 w-auto opacity-100 invert brightness-0 pointer-events-none">
-                <img src="/pzu-navbar.svg" alt="PZU Logo" className="h-full" />
-             </div>
+            <a href="https://sus.org.pl" target="_blank" rel="noopener noreferrer" className="h-12 w-auto opacity-100 invert brightness-0">
+              <img src="/sus-navbar.svg" alt="SUS Logo" className="h-full" />
+            </a>
+            <a href="https://pzu.pl" target="_blank" rel="noopener noreferrer" className="h-10 w-auto opacity-100 invert brightness-0">
+              <img src="/pzu-navbar.svg" alt="PZU Logo" className="h-full" />
+            </a>
           </div>
 
         </div>

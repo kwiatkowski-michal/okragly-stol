@@ -3,8 +3,10 @@ import './globals.css';
 import React, { useState } from 'react';
 import { MdOutlineArrowForwardIos } from 'react-icons/md';
 import { IoIosBus, IoIosDocument, IoIosDownload } from 'react-icons/io';
+import { useTheme } from 'next-themes';
 
 const App = () => {
+  const {theme, setTheme} = useTheme();
   const [activeTab, setActiveTab] = useState('agenda');
 
   const agendaItems = [
@@ -241,18 +243,20 @@ const App = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: "ORGANIZATOR", name: "Stowarzyszenie Umarłych Statutów", logo: "/sus.svg" },
-              { label: "PARTNER", name: "Fundacja PZU", logo: "/pzu.svg" },
-              { label: "PATRONAT HONOROWY", name: "Ministerstwo Edukacji Narodowej", logo: "/men.svg" },
-              { label: "PARTNER", name: "Narodowy Instytut Wolności", logo: "/niw.svg" }
+              { label: "ORGANIZATOR", name: "Stowarzyszenie Umarłych Statutów", logo: "/sus.svg", link: "https://sus.org.pl" },
+              { label: "PARTNER", name: "Fundacja PZU", logo: "/pzu.svg", link: "https://fundacja.pzu.pl" },
+              { label: "PATRONAT HONOROWY", name: "Ministerstwo Edukacji Narodowej", logo: "/men.svg", link: "https://gov.pl/edukacja" },
+              { label: "PARTNER", name: "Narodowy Instytut Wolności", logo: "/niw.svg", link: "https://niw.edu.pl" }
             ].map((partner, i) => (
-              <div key={i} className="bg-gray-100/80 p-8 rounded-2xl border border-gray-100 text-center hover:shadow-sm transition-shadow">
+              <a key={i} href={partner.link} target="_blank" rel="noopener noreferrer" className="h-full">
+              <div key={i} className="bg-gray-100/80 p-8 h-full rounded-2xl border border-gray-100/10 text-center hover:shadow-sm transition-shadow">
                 <div className="text-5xl mb-6 transition-all duration-500">
                   <img src={partner.logo} alt={partner.name} className="h-20 w-full object-contain" />
                 </div>
                 <p className="text-[10px] font-bold malina-100 tracking-[0.2em] mb-2 uppercase">{partner.label}</p>
                 <h4 className="font-bold text-sm text-slate-800 leading-tight">{partner.name}</h4>
               </div>
+              </a>
             ))}
           </div>
         </div>
