@@ -23,8 +23,10 @@ export const viewport: Viewport = {
   ],
 }
 
-
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://okraglystol.sus.org.pl';
 export const metadata: Metadata = {
+  
+  metadataBase: new URL(baseUrl),
   openGraph: {
     title: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
     description: 'Stowarzyszenie Umarłych Statutów x Fundacja PZU | Pierwsze w Polsce od ponad 20 lat konsultacje na rzecz Krajowej Strategii Młodzieżowej. Twój głos ma realny wpływ.',
@@ -32,13 +34,13 @@ export const metadata: Metadata = {
     siteName: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
     images: [
       {
-        url: '/og.png', // Must be an absolute URL
+        url: '/og.png',
         width: 800,
         height: 600,
         alt: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
       },
       {
-        url: '/og-alt.png', // Must be an absolute URL
+        url: '/og-alt.png',
         width: 1800,
         height: 1600,
         alt: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
