@@ -33,7 +33,7 @@ const MobileThemeToggle = () => {
     <button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
       className="flex items-center justify-between w-full mt-1">
-        <span className="text-2xl font-bold hover:text-[#F2313E]">{isDark ? 'Jasny motyw' : 'Ciemny motyw'}</span>
+        <span className="text-2xl font-bold">{isDark ? 'Jasny motyw' : 'Ciemny motyw'}</span>
     </button>
     <span className="text-sm opacity-75">Kliknij, aby zmienić motyw strony</span>
     </div>
@@ -155,7 +155,7 @@ export default function NavBar() {
         <div 
           className={`
             lg:hidden w-full max-w-7xl overflow-hidden
-            bg-white/75 dark:bg-[#1E1E1E]/50 backdrop-blur-md 
+            bg-white/75 dark:bg-[#1E1E1E]/50 backdrop-blur-sm inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 
       
             rounded-[2.5rem] shadow-2xl transition-all duration-500 ease-in-out
             ${isOpen ? 'max-h-[600px] opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95 pointer-events-none'}
@@ -169,7 +169,7 @@ export default function NavBar() {
                 onClick={() => setIsOpen(false)}
                 className={`
                   text-2xl font-bold py-3 px-2 
-                  black-100 hover:text-[#F2313E] 
+                   
                   ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}
                 `}
                 style={{ }}
