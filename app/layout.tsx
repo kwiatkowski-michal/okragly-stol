@@ -69,12 +69,12 @@ export default function RootLayout({
       className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased scroll-smooth`}
     >
       <head>
-        {/* <link
+        <link
           rel="icon"
           href="/icons/512.png"
           type="image/png"
           sizes="512x512"
-        /> */}
+        />
         <link
           rel="apple-touch-icon"
           href="/icons/apple-icon.png"

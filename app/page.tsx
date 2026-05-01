@@ -216,8 +216,8 @@ const App = () => {
       </section>
 
       {/*04*/}
-      <section id="rejestracja" className="py-24  relative overflow-hidden">
-        <div className="max-w-7xl h-228 mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="rejestracja" className="pb-100  relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-24">
               <span className="font-special text-8xl font-extralight text-[#D8C8C8] leading-none">04</span>
