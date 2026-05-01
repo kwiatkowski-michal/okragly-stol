@@ -29,18 +29,21 @@ const MobileThemeToggle = () => {
   const isDark = resolvedTheme === 'dark';
 
   return (
+    <div className="flex flex-col p-2 items-start gap-0.1 w-full">
     <button
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
-      className="flex items-center justify-between w-full p-2 mt-1 rounded-2xl ">
+      className="flex items-center justify-between w-full mt-1">
         <span className="text-2xl font-bold hover:text-[#F2313E]">{isDark ? 'Jasny motyw' : 'Ciemny motyw'}</span>
     </button>
+    <span className="text-sm opacity-75">Kliknij, aby zmienić motyw strony</span>
+    </div>
   );
 };
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // const [lastScrollY, setLastScrollY] = useState(0);
 
   // useEffect(() => {
   //   const controlNavbar = () => {
@@ -70,7 +73,7 @@ export default function NavBar() {
         `}
       >
         {/* ELEMENT 1: Główny Navbar (PASTYLKA) */}
-        <nav className="w-full max-w-7xl bg-white/75 dark:bg-[#1E1E1E]/50 backdrop-blur-md shadow-xl/2 dark:shadow-white border border-gray-200/50 dark:border-gray-200/5 rounded-[3rem] px-6 lg:px-10 h-16 lg:h-20 flex justify-between items-center transition-colors duration-300">
+        <nav className="w-full max-w-7xl bg-white/75 dark:bg-[#1E1E1E]/50 backdrop-blur-xs rounded-[3rem] inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10  px-6 lg:px-10 h-16 lg:h-20 flex justify-between items-center transition-colors duration-300">
           <Link href="/" className="flex items-center">
              <div>
                     <svg height="30" viewBox="0 0 141 47" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -174,6 +177,7 @@ export default function NavBar() {
                 {link.name}
               </Link>
             ))}
+            <div className=" border-t border-gray-300 dark:border-white/10"/>
             
             <MobileThemeToggle />
           </div>

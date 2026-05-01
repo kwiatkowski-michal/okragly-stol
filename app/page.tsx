@@ -44,20 +44,20 @@ const App = () => {
             <span className="text-malina font-bold text-sm tracking-widest uppercase mb-4 block">
               — WYDARZENIE OGÓLNOPOLSKIE
             </span>
-            <h1 className="text-5xl md:text-7xl font-extrabold black-100 mb-8">
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-8">
               Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej
             </h1>
-            <p className="text-xl black-80 mb-10 leading-relaxed">
+            <p className="text-xl mb-10 leading-relaxed">
               Pierwsze w Polsce od ponad 20 lat konsultacje na rzecz Krajowej Strategii Młodzieżowej.<br />Twój głos ma realny wpływ.
             </p>
 
             <div className="rounded-lg text-sm gap-8 mb-12 pt-8">
               <div className="grid grid-cols-[auto_1fr] gap-x-12 gap-y-6 items-baseline">
-                <span className="black-80 uppercase font-bold tracking-wider">Data</span>
+                <span className="uppercase font-bold tracking-wider">Data</span>
                 <span className="text-malina uppercase font-medium">25 Maja 2026</span>
-                <span className="black-80 uppercase font-bold tracking-wider">Miejsce</span>
+                <span className="uppercase font-bold tracking-wider">Miejsce</span>
                 <span className="text-malina uppercase font-medium">Warszawa</span>
-                <span className="black-80 uppercase font-bold tracking-wider">Forma</span>
+                <span className="uppercase font-bold tracking-wider">Forma</span>
                 <span className="text-malina uppercase font-medium">Wydarzenie stacjonarne i udział bezpłatny</span>
               </div>
             </div>
@@ -72,7 +72,7 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="absolute top-20 right-[-130] md:right-[-250] lg:right-[-350] opacity-40 sm:w-1/2 h-full pointer-events-none visible">
+        <div className="absolute top-20 right-[-130] opacity-40 sm:opacity-100 md:right-[-250] lg:right-[-350] sm:w-1/2 h-full pointer-events-none visible">
           <img src="/ornament.png" alt="Ornament" className="h-150 object-contain" />
         </div>
       </section>
@@ -256,8 +256,8 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="absolute z-1 top-20 right-[-230] md:right-[-250] lg:right-[-350] opacity-40 sm:w-1/2 h-full pointer-events-none visible">
-          <img src="/ornament.png" alt="Ornament" className="h-190 object-contain" />
+        <div className="absolute z-1 top-20 right-[-230] md:right-[-250] lg:right-[-350] sm:w-1/2 h-full pointer-events-none visible">
+          <img src="/ornament.png" alt="Ornament" className="h-180 object-contain" />
         </div>
       </section>
       {/*05*/}
