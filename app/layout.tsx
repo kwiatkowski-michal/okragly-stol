@@ -70,13 +70,13 @@ export default function RootLayout({
       <head>
         <link
           rel="icon"
-          href="/icons/512.png"
+          href="/512.png"
           type="image/png"
           sizes="512x512"
         />
         <link
           rel="apple-touch-icon"
-          href="/icons/apple-icon.png"
+          href="/apple-icon.png"
           type="image/png"
           sizes="760x760"
         />
