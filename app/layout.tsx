@@ -14,6 +14,15 @@ const bricolageGrotesque = Bricolage_Grotesque({
   variable: "--font-bricolage-grotesque",
   subsets: ["latin"],
 });
+import type { Viewport } from 'next'
+ 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FFFBFB' },
+    { media: '(prefers-color-scheme: dark)', color: '#1E1E1E' },
+  ],
+}
+
 
 export const metadata: Metadata = {
   openGraph: {
@@ -56,6 +65,9 @@ export default function RootLayout({
       lang="pl"
       className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased dark scroll-smooth`}
     >
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className="">
         <ThemeProvider>
           <Navbar/>
