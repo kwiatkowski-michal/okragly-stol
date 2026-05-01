@@ -82,7 +82,7 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16 items-start">
             <div className="w-24">
-              <span className="font-special text-8xl  white-60 leading-none">01</span>
+              <span className="font-special text-8xl font-extralight text-[#D8C8C8] leading-none">01</span>
             </div>
             <div className="flex-1">
               <span className="text-malina font-bold text-sm tracking-widest uppercase mb-2 block">
@@ -113,11 +113,11 @@ const App = () => {
       </section>
 
       {/*02*/}
-      <section id="agenda" className="py-24">
+      <section id="agenda" className="py-24 bg-black/3 dark:bg-white/3">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="font-special w-24 shrink-0">
-              <span className="font-special text-8xl font-extralight white-60 leading-none">02</span>
+              <span className="font-special text-8xl font-extralight text-[#D8C8C8] leading-none">02</span>
             </div>
             <div className="flex-1">
               <span className="text-malina font-bold text-sm tracking-widest uppercase mb-2 block">
@@ -167,13 +167,27 @@ const App = () => {
 
           </div>
 
+          <div className="absolute visible lg:invisible inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+
+            <div className="absolute right-0 top-0 bottom-0 ">
+              
+
+            {/* Grupa prawa (te dwa okręgi przy samej krawędzi) */}
+            <div className="absolute -right-16 top-1/5 -translate-y-1/2 flex flex-col gap-20">
+              <div className="w-90 h-90 border border-white/40 rounded-full" />
+              <div className="w-90 h-90 border border-white/40 rounded-full -mt-20" />
+            </div>
+            </div>
+
+          </div>
+
 
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-24 shrink-0">
-              <span className="text-8xl font-special text-white leading-none">03</span>
+              <span className="font-special text-8xl font-extralight text-[#D8C8C8] leading-none">03</span>
             </div>
             <div className="flex-1">
-              <span className="white-100 font-bold text-white text-sm tracking-widest uppercase mb-2 block">
+              <span className="dark:text-malina text-white font-bold text-sm tracking-widest uppercase mb-2 block">
                 — DO POBRANIA
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">Materiały i strategia</h2>
@@ -206,10 +220,10 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-24">
-              <span className="font-special text-8xl font-extralight white-60 leading-none">04</span>
+              <span className="font-special text-8xl font-extralight text-[#D8C8C8] leading-none">04</span>
             </div>
             <div className="flex-1">
-              <span className="malina-100 font-bold text-sm tracking-widest uppercase mb-2 block">
+              <span className="text-malina font-bold text-sm tracking-widest uppercase mb-2 block">
                 — ZAPISY
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-8">Zarejestruj się</h2>
@@ -251,10 +265,10 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16 mb-16">
             <div className="w-24">
-              <span className="text-8xl font-special white-60 leading-none">05</span>
+              <span className="font-special text-8xl font-extralight text-[#D8C8C8] leading-none">05</span>
             </div>
             <div>
-              <span className="malina-100 font-bold text-sm tracking-widest uppercase mb-2 block">
+              <span className="text-malina font-bold text-sm tracking-widest uppercase mb-2 block">
                 — ZAANGAŻOWANI
               </span>
               <h2 className="text-4xl md:text-5xl font-bold">Organizatorzy i partnerzy</h2>
@@ -268,12 +282,12 @@ const App = () => {
               { label: "PARTNER", name: "Narodowy Instytut Wolności", logo: "/niw.svg", link: "https://niw.gov.pl" }
             ].map((partner, i) => (
               <a key={i} href={partner.link} target="_blank" rel="noopener noreferrer" className="h-full">
-                <div key={i} className="bg-gray-100/80 p-8 h-full rounded-2xl border border-gray-100/10 text-center hover:shadow-sm transition-shadow">
+                <div key={i} className="bg-white border border-white/5 shadow-xl shadow-gray-200/10 dark:shadow-white/5 p-8 h-full rounded-2xl text-center transition-shadow">
                   <div className="text-5xl mb-6 transition-all duration-500">
                     <img src={partner.logo} alt={partner.name} className="h-20 w-full object-contain" />
                   </div>
-                  <p className="text-[10px] font-bold malina-100 tracking-[0.2em] mb-2 uppercase">{partner.label}</p>
-                  <h4 className="font-bold text-sm text-slate-800 leading-tight">{partner.name}</h4>
+                  <p className="text-[10px] font-bold text-malina tracking-[0.2em] mb-2 uppercase">{partner.label}</p>
+                  <h4 className="font-bold text-lg text-black leading-tight">{partner.name}</h4>
                 </div>
               </a>
             ))}
@@ -285,24 +299,24 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-24">
-              <span className="font-special text-8xl font-extralight white-60 leading-none">06</span>
+              <span className="font-special text-8xl font-extralight text-[#D8C8C8] leading-none">06</span>
             </div>
             <div className="flex-1">
-              <span className="malina-100 font-bold tracking-widest uppercase mb-2 block">
+              <span className="text-malina font-bold tracking-widest uppercase mb-2 block">
                 — KONTAKT
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-16">Masz pytania?</h2>
 
               <div className="grid md:grid-cols-2 gap-16 mb-24">
                 <div>
-                  <p className="text-md font-bold malina-100 tracking-widest mb-4 uppercase">E-MAIL</p>
-                  <a href="mailto:kontakt@sus.org.pl" className="border-b border-red-500 pb-8 text-2xl md:text-3xl font-bold hover:malina-100 transition-colors">
+                  <p className="text-md font-bold text-malina tracking-widest mb-4 uppercase">E-MAIL</p>
+                  <a href="mailto:kontakt@sus.org.pl" className="border-b border-red-500 pb-8 text-2xl md:text-3xl font-bold hover:text-malina transition-colors">
                     kontakt@sus.org.pl
                   </a>
                 </div>
                 <div className="">
-                  <p className="text-md font-bold malina-100 tracking-widest mb-4 uppercase">DLA MEDIÓW</p>
-                  <a href="mailto:media@sus.org.pl" className="border-b border-red-500 pb-8 text-2xl md:text-3xl font-bold hover:malina-100 transition-colors">
+                  <p className="text-md font-bold text-malina tracking-widest mb-4 uppercase">DLA MEDIÓW</p>
+                  <a href="mailto:media@sus.org.pl" className="border-b border-red-500 pb-8 text-2xl md:text-3xl font-bold hover:text-malina transition-colors">
                     media@sus.org.pl
                   </a>
                 </div>
