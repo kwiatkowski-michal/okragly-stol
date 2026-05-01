@@ -15,7 +15,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
 });
 import type { Viewport } from 'next'
- 
+
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#FFFBFB' },
@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://okraglystol.sus.org.pl';
 export const metadata: Metadata = {
-  
+
   metadataBase: new URL(baseUrl),
   openGraph: {
     title: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
@@ -63,20 +63,32 @@ export default function RootLayout({
 }>) {
   return (
     <html
-    suppressHydrationWarning
+      suppressHydrationWarning
       lang="pl"
       className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased dark scroll-smooth`}
     >
       <head>
+        <link
+          rel="icon"
+          href="/icons/512.png"
+          type="image/png"
+          sizes="512x512"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/icons/apple-icon.png"
+          type="image/png"
+          sizes="760x760"
+        />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className="">
         <ThemeProvider>
-          <Navbar/>
+          <Navbar />
 
 
-        {children}
-        <Footer />
+          {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
@@ -84,8 +96,8 @@ export default function RootLayout({
 }
 
 function Footer() {
-    return (
-        <footer className="w-full bg-[#F2313E] text-white py-12 px-6 md:px-12 lg:px-24">
+  return (
+    <footer className="w-full bg-[#F2313E] text-white py-12 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
           <div className="space-y-6">
@@ -122,5 +134,5 @@ function Footer() {
         </div>
       </div>
     </footer>
-    )
+  )
 }
