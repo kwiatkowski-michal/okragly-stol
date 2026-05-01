@@ -20,8 +20,9 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-
+ const [mounted, setMounted] = useState(false);
   useEffect(() => {
+    setMounted(true);
     const controlNavbar = () => {
       if (typeof window !== 'undefined') {
         if (window.scrollY > lastScrollY && window.scrollY > 100) {
@@ -161,7 +162,7 @@ function NavBar() {
                       transitionDelay: isOpen ? `${index * 40}ms` : '0ms',
                     }}
                     className={`
-                      block text-lg font-medium py-3 ${theme === "dark" ? "text-gray-300" : "text-gray-700"}
+                      block text-lg font-medium py-3 ${!mounted ? "text-gray-700" : theme === "dark" ? "text-gray-300" : "text-gray-700"}
                       hover:text-[#F2313E] transition-all transform
                       ${isOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}
                     `}

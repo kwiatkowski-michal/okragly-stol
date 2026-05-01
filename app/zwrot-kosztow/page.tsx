@@ -1,5 +1,9 @@
 import { ArrowRight, Download, ExternalLink } from "lucide-react"
-
+import type { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Zwrot kosztów',
+}
 export default async function ZwrotKosztow() {
     return (
         <>

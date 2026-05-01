@@ -16,7 +16,32 @@ const bricolageGrotesque = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
-  title: "Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej",
+  openGraph: {
+    title: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
+    description: 'Stowarzyszenie Umarłych Statutów x Fundacja PZU | Pierwsze w Polsce od ponad 20 lat konsultacje na rzecz Krajowej Strategii Młodzieżowej. Twój głos ma realny wpływ.',
+    url: 'https://okraglystol.sus.org.pl',
+    siteName: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
+    images: [
+      {
+        url: 'https://okraglystol.sus.org.pl/og.png', // Must be an absolute URL
+        width: 800,
+        height: 600,
+        alt: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
+      },
+      {
+        url: 'https://okraglystol.sus.org.pl/og-alt.png', // Must be an absolute URL
+        width: 1800,
+        height: 1600,
+        alt: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
+      },
+    ],
+    locale: 'pl_PL',
+    type: 'website',
+  },
+  title: {
+    default: "Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej",
+    template: "%s | Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej",
+  },
   description: "Pierwsze w Polsce od ponad 20 lat konsultacje na rzecz Krajowej Strategii Młodzieżowej. Twój głos ma realny wpływ.",
 };
 
@@ -29,7 +54,7 @@ export default function RootLayout({
     <html
     suppressHydrationWarning
       lang="pl"
-      className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased dark scroll-smooth scroll-pt-90`}
+      className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased dark scroll-smooth`}
     >
       <body className="">
         <ThemeProvider>
