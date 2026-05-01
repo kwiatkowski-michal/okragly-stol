@@ -15,6 +15,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
 });
 import type { Viewport } from 'next'
+import { ExternalLinkIcon } from "lucide-react";
 
 export const viewport: Viewport = {
   themeColor: [
@@ -114,8 +115,9 @@ function Footer() {
             <div className="space-y-2">
               <Link href="https://umarlestatuty.pl/polityka-prywatnosci" className="block hover:underline opacity-90">
                 Polityka prywatności
+                <ExternalLinkIcon className="inline-block w-3 h-3 ml-1" />
               </Link>
-              <Link href="https://sus.org.pl/rodo" className="block hover:underline opacity-90">
+              <Link href="/rodo" className="block hover:underline">
                 RODO
               </Link>
             </div>
