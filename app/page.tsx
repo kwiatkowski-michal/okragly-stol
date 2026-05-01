@@ -128,7 +128,8 @@ const App = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-12">Agenda dnia</h2>
 
               <div className="space-y-12">
-                {agendaItems.map((item, idx) => (
+                <p>Agenda zostanie ogłoszona w najbliższym czasie.</p>
+                {/* {agendaItems.map((item, idx) => (
                   <div key={idx} className="flex flex-col md:flex-row gap-6 md:gap-16 border-b border-gray-200 pb-12 last:border-0">
                     <div className="md:w-32">
                       <span className="text-2xl font-bold black-80">{item.time}</span>
@@ -141,7 +142,7 @@ const App = () => {
                       <p className="black-80 leading-relaxed max-w-2xl">{item.description}</p>
                     </div>
                   </div>
-                ))}
+                ))} */}
               </div>
             </div>
           </div>
@@ -198,6 +199,7 @@ const App = () => {
               <div className="max-w-2xl black-80 mb-12 space-y-6">
                 <p>Udział w Ogólnopolskim Okrągłym Stole jest bezpłatny. Zapraszamy uczniów, studentów, przedstawicieli młodzieżowych rad, samorządów, organizacji pozarządowych, instytucji publicznych i środowisk akademickich.</p>
                 <p className="font-medium black-80">Liczba miejsc jest ograniczona. Po rejestracji otrzymasz potwierdzenie e-mailem wraz z szczegółami logistycznymi.</p>
+                <p>Rejestracja aktywna od 6 maja 2026 r.</p>
                 <a href="#" className="inline-flex items-center gap-3 px-10 py-4 bg-malina-100 text-white font-bold rounded-full hover:bg-[#CE1623] transition-all">
                   Zarejestruj się <MdOutlineArrowForwardIos size={16} />
                 </a>

@@ -102,7 +102,7 @@ export default async function ZwrotKosztow() {
                         Wniosek składa się tylko przez System Obsługi Dotacji (SOD)
                     </h2>
                     <div className="flex items-center gap-4 mb-6">
-                        <a href="https://generator.niw.gov.pl/login" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-malina-100 text-white font-bold rounded-full hover:bg-red-600 transition-all shadow-lg shadow-red-200 flex items-center gap-2">
+                        <a href="https://generator.niw.gov.pl/login" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-malina-100 text-white font-bold rounded-full hover:bg-red-600 transition-all flex items-center gap-2">
                             Złóż wniosek <ExternalLink size={18} />
                         </a>
                     </div>
