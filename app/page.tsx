@@ -6,7 +6,7 @@ import { IoIosBus, IoIosDocument, IoIosDownload } from 'react-icons/io';
 import { useTheme } from 'next-themes';
 
 const App = () => {
-  const {theme, setTheme} = useTheme();
+  const { theme, setTheme } = useTheme();
   const [activeTab, setActiveTab] = useState('agenda');
 
   const agendaItems = [
@@ -148,7 +148,26 @@ const App = () => {
       </section>
       {/*03*/}
       <section id="pobierz" className="py-24">
-        <div className="max-w-7xl mx-auto p-10 sm:px-6 lg:px-8 bg-malina dark:border-1 dark:border-malina dark:bg-transparent shadow-xl shadow-malina/30 rounded-3xl">
+        <div className="relative max-w-7xl mx-auto p-10 sm:px-6 lg:px-8 bg-malina dark:border-1 dark:border-malina dark:bg-transparent shadow-xl shadow-malina/30 rounded-3xl">
+          <div className="absolute invisible lg:visible inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+
+            <div className="absolute right-0 top-0 bottom-0 min-w-[600px]">
+              {/* Grupa lewa (te dwa okręgi bardziej wysunięte do środka) */}
+            <div className="absolute right-[49.5%] top-1/2 -translate-y-1/2 flex flex-col gap-18 translate-x-0.5">
+              <div className="w-90 h-90 border border-white/40 rounded-full" />
+              <div className="w-90 h-90 border border-white/40 rounded-full -mt-20" />
+            </div>
+
+            {/* Grupa prawa (te dwa okręgi przy samej krawędzi) */}
+            <div className="absolute -right-16 top-1/2 -translate-y-1/2 flex flex-col gap-20">
+              <div className="w-90 h-90 border border-white/40 rounded-full" />
+              <div className="w-90 h-90 border border-white/40 rounded-full -mt-20" />
+            </div>
+            </div>
+
+          </div>
+
+
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-24 shrink-0">
               <span className="text-8xl font-special text-white leading-none">03</span>
@@ -160,7 +179,7 @@ const App = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">Materiały i strategia</h2>
               <div className="grid lg:grid-cols-3 gap-8">
                 {downloads.map((doc, idx) => (
-                  <div key={idx} className="bg-white dark:bg-white/5 backdrop-blur-md border border-white/5 shadow-xl rounded-3xl p-6">
+                  <div key={idx} className="bg-white dark:bg-white/5 backdrop-blur-sm border border-white/5 shadow-xl rounded-3xl p-6">
                     <div className="w-12 h-12 flex items-center justify-center mb-6">
                       <IoIosDocument className="w-25 h-25 text-malina" />
                     </div>
@@ -249,13 +268,13 @@ const App = () => {
               { label: "PARTNER", name: "Narodowy Instytut Wolności", logo: "/niw.svg", link: "https://niw.gov.pl" }
             ].map((partner, i) => (
               <a key={i} href={partner.link} target="_blank" rel="noopener noreferrer" className="h-full">
-              <div key={i} className="bg-gray-100/80 p-8 h-full rounded-2xl border border-gray-100/10 text-center hover:shadow-sm transition-shadow">
-                <div className="text-5xl mb-6 transition-all duration-500">
-                  <img src={partner.logo} alt={partner.name} className="h-20 w-full object-contain" />
+                <div key={i} className="bg-gray-100/80 p-8 h-full rounded-2xl border border-gray-100/10 text-center hover:shadow-sm transition-shadow">
+                  <div className="text-5xl mb-6 transition-all duration-500">
+                    <img src={partner.logo} alt={partner.name} className="h-20 w-full object-contain" />
+                  </div>
+                  <p className="text-[10px] font-bold malina-100 tracking-[0.2em] mb-2 uppercase">{partner.label}</p>
+                  <h4 className="font-bold text-sm text-slate-800 leading-tight">{partner.name}</h4>
                 </div>
-                <p className="text-[10px] font-bold malina-100 tracking-[0.2em] mb-2 uppercase">{partner.label}</p>
-                <h4 className="font-bold text-sm text-slate-800 leading-tight">{partner.name}</h4>
-              </div>
               </a>
             ))}
           </div>

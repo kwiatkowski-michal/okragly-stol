@@ -104,7 +104,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
           <div className="space-y-6">
             <div className="flex items-center gap-4">
-              <img src="stol.png" alt="Okrągły Stół Logo" className="h-12 w-auto opacity-90 invert brightness-0 pointer-events-none" />
+              <img src="stol.png" width="250" alt="Okrągły Stół Logo" className=" pointer-events-none" />
             </div>
             <p className="text-sm opacity-90 font-light">
               Partnerem wydarzenia jest Fundacja PZU
