@@ -5,9 +5,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #FEF8F8;
-  --foreground: #1E1E1E;
-  --malina: #F2313E;
+  --background: #F5F5F5;
+  --foreground: #1D1616;
+  --malina: #E43636;
 }
 
 @theme {
@@ -16,9 +16,9 @@
 }
 
 .dark {
-  --background: #1E1E1E;
-  --foreground: #FEF8F8;
-  --malina: #F2313E;
+  --background: #1D1616;
+  --foreground: #F5F5F5;
+  --malina: #E43636;
 }
 
 body {
