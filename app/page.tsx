@@ -216,8 +216,8 @@ const App = () => {
       </section>
 
       {/*04*/}
-      <section id="rejestracja" className="pb-100  relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="rejestracja" className="pb-100 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-24">
               <span className="font-special text-8xl font-extralight text-[#D8C8C8] leading-none">04</span>
@@ -256,8 +256,9 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="absolute z-1 top-20 right-[-230] md:right-[-250] lg:right-[-350] sm:w-1/2 h-full pointer-events-none visible">
-          <img src="/ornament.png" alt="Ornament" className="h-180 object-contain" />
+        <div className="absolute top-0 right-[-130] opacity-40 sm:opacity-100 md:right-[-250] lg:right-[-350] sm:w-1/2 h-full pointer-events-none visible">
+          <img src="/kola_light.png" alt="Koła" className="dark:hidden h-200 object-contain max-w-none" />
+          <img src="/kola_dark.png" alt="Koła" className="hidden dark:block h-200 object-contain max-w-none" />
         </div>
       </section>
       {/*05*/}
