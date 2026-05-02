@@ -23,24 +23,3 @@ export function ThemeToggle() {
     </button>
   );
 }
-
-export function ThemeToggleText() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
-  return (
-    <a
-      suppressHydrationWarning
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className={`block text-lg font-medium py-3 ${theme === "dark" ? "text-gray-300" : "text-gray-700"} hover:text-[#F2313E] transition-all transform`}
-    >
-      {theme === "dark" ? "Zmień motyw na jasny" : "Zmień motyw na ciemny"}
-    </a>
-  );
-}

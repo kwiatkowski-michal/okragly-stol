@@ -133,7 +133,7 @@ const App = () => {
                       <span className="text-2xl font-bold black-80">{item.time}</span>
                     </div>
                     <div className="flex-1">
-                      <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider mb-4 text-malina border-1 border-malina-100">
+                      <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider mb-4 text-malina border border-malina-100">
                         {item.tag}
                       </span>
                       <h3 className="text-xl font-bold mb-2">{item.title}</h3>
@@ -148,7 +148,7 @@ const App = () => {
       </section>
       {/*03*/}
       <section id="pobierz" className="py-24">
-        <div className="relative max-w-7xl mx-auto p-10 sm:px-6 lg:px-8 bg-malina dark:border-1 dark:border-malina dark:bg-transparent shadow-xl shadow-malina/30 rounded-3xl">
+        <div className="relative max-w-7xl mx-auto p-10 sm:px-6 lg:px-8 bg-malina dark:border dark:border-malina dark:bg-transparent shadow-xl shadow-malina/30 rounded-3xl">
           <div className="absolute invisible lg:visible inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
 
             <div className="absolute right-0 top-0 bottom-0 min-w-[600px]">

@@ -67,7 +67,7 @@ export default function NavBar() {
     <>
       <div className="h-24 lg:h-32" />
 
-      <header className="fixed top-6 left-0 right-0 z-[100] flex flex-col items-center px-4 gap-2">
+      <header className="fixed top-6 left-0 right-0 z-100 flex flex-col items-center px-4 gap-2">
         {/* ELEMENT 1: Główny Navbar (PASTYLKA) */}
         <nav className="w-full max-w-7xl bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-[3rem] px-6 lg:px-10 h-16 lg:h-20 flex justify-between items-center">
           <Link href="/" className="flex items-center">
@@ -154,7 +154,7 @@ export default function NavBar() {
           className={`
             lg:hidden w-full max-w-7xl grid transition-[grid-template-rows,opacity] duration-300 ease-out
             bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10
-            rounded-[2.5rem] shadow-2xl
+            rounded-[2.5rem]
             ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'}
           `}
         >
