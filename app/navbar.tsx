@@ -155,8 +155,7 @@ export default function NavBar() {
         <div
           className={`
             lg:hidden w-full max-w-7xl overflow-hidden
-            bg-white/75 dark:bg-[#1E1E1E]/50 bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-black/15 dark:border-white/15 shadow-lg shadow-black/5 dark:shadow-lg dark:shadow-white/4 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10
-      
+            bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10
             rounded-[2.5rem] shadow-2xl transition-all duration-500 ease-in-out
             ${isOpen ? 'max-h-[600px] opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95 pointer-events-none'}
           `}
@@ -177,7 +176,7 @@ export default function NavBar() {
                 {link.name}
               </Link>
             ))}
-            <div className=" border-t border-gray-300 dark:border-white/10" />
+            <div className=" border-t border-black/2 dark:border-white/10" />
 
             <MobileThemeToggle />
           </div>

@@ -193,7 +193,7 @@ const App = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">Materiały i strategia</h2>
               <div className="grid lg:grid-cols-3 gap-8">
                 {downloads.map((doc, idx) => (
-                  <div key={idx} className="bg-white/75 dark:bg-white/10 backdrop-blur-xs border dark:border-white/15 border-black/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-3xl p-6">
+                  <div key={idx} className="bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-3xl p-6">
                     <div className="w-12 h-12 flex items-center justify-center mb-6">
                       <IoIosDocument className="w-25 h-25 text-malina" />
                     </div>
@@ -236,7 +236,7 @@ const App = () => {
                 </a>
               </div>
 
-              <div className="absolute z-10 max-w-2xl mr-4 h-auto p-8 bg-white/75 dark:bg-white/10 backdrop-blur-xs border dark:border-white/15 border-black/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-[40px]">
+              <div className="absolute z-10 max-w-2xl mr-4 h-auto p-8 bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-[40px]">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex items-center justify-center w-12 h-12">
                     <IoIosBus className="text-malina w-10 h-10" />
