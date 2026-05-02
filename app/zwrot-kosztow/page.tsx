@@ -1,8 +1,8 @@
 import { ArrowRight, Download, ExternalLink } from "lucide-react"
 import type { Metadata } from 'next'
- 
+
 export const metadata: Metadata = {
-  title: 'Zwrot kosztów',
+    title: 'Zwrot kosztów',
 }
 export default async function ZwrotKosztow() {
     return (
@@ -102,7 +102,7 @@ export default async function ZwrotKosztow() {
                         Wniosek składa się tylko przez System Obsługi Dotacji (SOD)
                     </h2>
                     <div className="flex items-center gap-4 mb-6">
-                        <a href="https://generator.niw.gov.pl/login" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-malina-100 text-white font-bold rounded-full hover:bg-red-600 transition-all flex items-center gap-2">
+                        <a href="https://generator.niw.gov.pl/login" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-malina text-white shadow-lg hover:shadow-none shadow-malina/50 font-bold rounded-full hover:bg-[#CE1623] transition-all flex items-center gap-2">
                             Złóż wniosek <ExternalLink size={18} />
                         </a>
                     </div>
@@ -156,31 +156,31 @@ export default async function ZwrotKosztow() {
                         Dobre praktyki przy składaniu wniosku:
                     </h2>
                     <ul className="flex flex-col gap-4 mb-10">
-                    <li className="flex items-start gap-3 black-80 text-lg leading-relaxed">
+                        <li className="flex items-start gap-3 black-80 text-lg leading-relaxed">
                             <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#4B4B4B]" />
-                        Wskaż wyraźnie, dlaczego udział w Kongresie jest istotny dla Twojej organizacji.
-                    </li>
-                    <li className="flex items-start gap-3 black-80 text-lg leading-relaxed">
-                        <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#4B4B4B]" />
-                        Dołącz zaproszenie, program wydarzenia lub potwierdzenie rejestracji na Kongres.
-                    </li>
+                            Wskaż wyraźnie, dlaczego udział w Kongresie jest istotny dla Twojej organizacji.
+                        </li>
+                        <li className="flex items-start gap-3 black-80 text-lg leading-relaxed">
+                            <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#4B4B4B]" />
+                            Dołącz zaproszenie, program wydarzenia lub potwierdzenie rejestracji na Kongres.
+                        </li>
 
-                    <li className="flex items-start gap-3 black-80 text-lg leading-relaxed">
+                        <li className="flex items-start gap-3 black-80 text-lg leading-relaxed">
                             <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#4B4B4B]" />
-                        Napisz koniecznie, że udział w Kongresie jest bezpłatny i otwarty dla wszystkich przedstawicieli organizacji społeczeństwa obywatelskiego.
-                    </li>
-                    <li className="flex items-start gap-3 black-80 text-lg leading-relaxed">
+                            Napisz koniecznie, że udział w Kongresie jest bezpłatny i otwarty dla wszystkich przedstawicieli organizacji społeczeństwa obywatelskiego.
+                        </li>
+                        <li className="flex items-start gap-3 black-80 text-lg leading-relaxed">
                             <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#4B4B4B]" />
-                        Opisz, jakie działania podejmiesz po wydarzeniu (np. dzielenie się wiedzą).
-                    </li>
-                    <li className="flex items-start gap-3 black-80 text-lg leading-relaxed">
+                            Opisz, jakie działania podejmiesz po wydarzeniu (np. dzielenie się wiedzą).
+                        </li>
+                        <li className="flex items-start gap-3 black-80 text-lg leading-relaxed">
                             <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#4B4B4B]" />
-                        Pokaż, że próbowałeś zdobyć finansowanie gdzie indziej (np. samorząd, sponsorzy).
-                    </li>
-                    <li className="flex items-start gap-3 black-80 text-lg leading-relaxed">
+                            Pokaż, że próbowałeś zdobyć finansowanie gdzie indziej (np. samorząd, sponsorzy).
+                        </li>
+                        <li className="flex items-start gap-3 black-80 text-lg leading-relaxed">
                             <span className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#4B4B4B]" />
-                        Zadbaj o poprawność budżetu – każdy koszt musi być uzasadniony i realny.
-                    </li>
+                            Zadbaj o poprawność budżetu – każdy koszt musi być uzasadniony i realny.
+                        </li>
                     </ul>
                 </Question>
                 <Question>

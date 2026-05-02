@@ -153,16 +153,16 @@ const App = () => {
 
             <div className="absolute right-0 top-0 bottom-0 min-w-[600px]">
               {/* Grupa lewa (te dwa okręgi bardziej wysunięte do środka) */}
-            <div className="absolute right-[49.5%] top-1/2 -translate-y-1/2 flex flex-col gap-18 translate-x-0.5">
-              <div className="w-90 h-90 border border-white/40 rounded-full" />
-              <div className="w-90 h-90 border border-white/40 rounded-full -mt-20" />
-            </div>
+              <div className="absolute right-[49.5%] top-1/2 -translate-y-1/2 flex flex-col gap-18 translate-x-0.5">
+                <div className="w-90 h-90 border border-white/40 rounded-full" />
+                <div className="w-90 h-90 border border-white/40 rounded-full -mt-20" />
+              </div>
 
-            {/* Grupa prawa (te dwa okręgi przy samej krawędzi) */}
-            <div className="absolute -right-16 top-1/2 -translate-y-1/2 flex flex-col gap-20">
-              <div className="w-90 h-90 border border-white/40 rounded-full" />
-              <div className="w-90 h-90 border border-white/40 rounded-full -mt-20" />
-            </div>
+              {/* Grupa prawa (te dwa okręgi przy samej krawędzi) */}
+              <div className="absolute -right-16 top-1/2 -translate-y-1/2 flex flex-col gap-20">
+                <div className="w-90 h-90 border border-white/40 rounded-full" />
+                <div className="w-90 h-90 border border-white/40 rounded-full -mt-20" />
+              </div>
             </div>
 
           </div>
@@ -170,13 +170,13 @@ const App = () => {
           <div className="absolute visible lg:invisible inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
 
             <div className="absolute right-0 top-0 bottom-0 ">
-              
 
-            {/* Grupa prawa (te dwa okręgi przy samej krawędzi) */}
-            <div className="absolute -right-16 top-1/5 -translate-y-1/2 flex flex-col gap-20">
-              <div className="w-90 h-90 border border-white/40 rounded-full" />
-              <div className="w-90 h-90 border border-white/40 rounded-full -mt-20" />
-            </div>
+
+              {/* Grupa prawa (te dwa okręgi przy samej krawędzi) */}
+              <div className="absolute -right-16 top-1/5 -translate-y-1/2 flex flex-col gap-20">
+                <div className="w-90 h-90 border border-white/40 rounded-full" />
+                <div className="w-90 h-90 border border-white/40 rounded-full -mt-20" />
+              </div>
             </div>
 
           </div>
@@ -193,7 +193,7 @@ const App = () => {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">Materiały i strategia</h2>
               <div className="grid lg:grid-cols-3 gap-8">
                 {downloads.map((doc, idx) => (
-                  <div key={idx} className="bg-white dark:bg-white/5 backdrop-blur-sm border border-white/5 shadow-xl rounded-3xl p-6">
+                  <div key={idx} className="bg-white/75 dark:bg-white/10 backdrop-blur-xs border dark:border-white/15 border-black/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-3xl p-6">
                     <div className="w-12 h-12 flex items-center justify-center mb-6">
                       <IoIosDocument className="w-25 h-25 text-malina" />
                     </div>
@@ -236,7 +236,7 @@ const App = () => {
                 </a>
               </div>
 
-              <div className="absolute z-10 max-w-2xl mr-4 h-auto p-8 border border-black/10 dark:border-white/10 shadow-xl dark:shadow-white/10 bg-white/1 dark:bg-white/5 backdrop-blur-sm rounded-[40px]">
+              <div className="absolute z-10 max-w-2xl mr-4 h-auto p-8 bg-white/75 dark:bg-white/10 backdrop-blur-xs border dark:border-white/15 border-black/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-[40px]">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex items-center justify-center w-12 h-12">
                     <IoIosBus className="text-malina w-10 h-10" />
