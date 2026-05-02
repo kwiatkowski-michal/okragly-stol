@@ -66,7 +66,7 @@ const App = () => {
               <a href="#agenda" className="px-8 py-4 border-2 black-100 font-bold rounded-full dark:hover:bg-white/10 transition-all flex items-center gap-2">
                 Agenda <MdOutlineArrowForwardIos />
               </a>
-              <a href="#rejestracja" className="px-8 py-4 bg-malina text-white font-bold rounded-full transition-all shadow-xl shadow-malina/30 hover:bg-[#CE1623] flex items-center gap-2">
+              <a href="#rejestracja" className="px-8 py-4 bg-malina text-white font-bold rounded-full transition-all shadow-xl shadow-malina/30 hover:bg-malinaDark hover:shadow-none flex items-center gap-2">
                 Zarejestruj się <MdOutlineArrowForwardIos />
               </a>
             </div>
@@ -231,7 +231,7 @@ const App = () => {
                 <p>Udział w Ogólnopolskim Okrągłym Stole jest bezpłatny. Zapraszamy uczniów, studentów, przedstawicieli młodzieżowych rad, samorządów, organizacji pozarządowych, instytucji publicznych i środowisk akademickich.</p>
                 <p className="font-medium black-80">Liczba miejsc jest ograniczona. Po rejestracji otrzymasz potwierdzenie e-mailem wraz z szczegółami logistycznymi.</p>
                 <p>Rejestracja aktywna od 6 maja 2026 r.</p>
-                <a href="#" className="inline-flex items-center gap-3 px-10 py-4 bg-malina text-white font-bold rounded-full hover:bg-[#CE1623] shadow-xl shadow-malina/30 transition-all">
+                <a href="#" className="inline-flex items-center gap-3 px-10 py-4 bg-malina text-white font-bold rounded-full hover:bg-malinaDark hover:shadow-none shadow-xl shadow-malina/30 transition-all">
                   Zarejestruj się <MdOutlineArrowForwardIos size={16} />
                 </a>
               </div>

@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { IoIosClose, IoIosMenu } from 'react-icons/io';
-import { LuSun, LuMoon } from 'react-icons/lu';
 import { X } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 
@@ -18,7 +17,7 @@ const navLinks = [
 
 // --- KOMPONENT: Bezpieczny przełącznik dla menu mobilnego ---
 const MobileThemeToggle = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -29,7 +28,7 @@ const MobileThemeToggle = () => {
   const isDark = resolvedTheme === 'dark';
 
   return (
-    <div className="flex flex-col p-2 items-start gap-0.1 w-full">
+    <div className="flex flex-col py-3 px-2 items-start gap-0.1 w-full">
       <button
         onClick={() => setTheme(isDark ? 'light' : 'dark')}
         className="flex items-center justify-between w-full mt-1">
@@ -42,38 +41,35 @@ const MobileThemeToggle = () => {
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  // const [lastScrollY, setLastScrollY] = useState(0);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  // useEffect(() => {
-  //   const controlNavbar = () => {
-  //     if (typeof window !== 'undefined') {
-  //       if (window.scrollY > lastScrollY && window.scrollY > 100) {
-  //         setIsVisible(false);
-  //         setIsOpen(false);
-  //       } else {
-  //         setIsVisible(true);
-  //       }
-  //       setLastScrollY(window.scrollY);
-  //     }
-  //   };
-  //   window.addEventListener('scroll', controlNavbar);
-  //   return () => window.removeEventListener('scroll', controlNavbar);
-  // }, [lastScrollY]);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <>
       <div className="h-24 lg:h-32" />
 
-      <header
-        className={`
-          fixed top-6 left-0 right-0 z-[100] flex flex-col items-center px-4 gap-2
-          transition-all duration-500 ease-in-out
-          ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-[150%] opacity-0"} 
-        `}
-      >
+      <header className="fixed top-6 left-0 right-0 z-[100] flex flex-col items-center px-4 gap-2">
         {/* ELEMENT 1: Główny Navbar (PASTYLKA) */}
-        <nav className="w-full max-w-7xl bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-[3rem] px-6 lg:px-10 h-16 lg:h-20 flex justify-between items-center transition-colors duration-300">
+        <nav className="w-full max-w-7xl bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-[3rem] px-6 lg:px-10 h-16 lg:h-20 flex justify-between items-center">
           <Link href="/" className="flex items-center">
             <div>
               <svg height="30" viewBox="0 0 141 47" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -144,6 +140,7 @@ export default function NavBar() {
 
           {/* Przycisk Hamburgera */}
           <button
+            ref={buttonRef}
             className="p-2 black-100 active:scale-90 transition-transform lg:hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
@@ -153,32 +150,30 @@ export default function NavBar() {
 
         {/* ELEMENT 2: Menu Mobilne (ODDZIELNE) */}
         <div
+          ref={menuRef}
           className={`
-            lg:hidden w-full max-w-7xl overflow-hidden
+            lg:hidden w-full max-w-7xl grid transition-[grid-template-rows,opacity] duration-300 ease-out
             bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10
-            rounded-[2.5rem] shadow-2xl transition-all duration-500 ease-in-out
-            ${isOpen ? 'max-h-[600px] opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95 pointer-events-none'}
+            rounded-[2.5rem] shadow-2xl
+            ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 pointer-events-none'}
           `}
         >
-          <div className="p-8 flex flex-col gap-2">
-            {navLinks.map((link, index) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`
-                  text-2xl font-bold py-3 px-2 
-                   
-                  ${isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}
-                `}
-                style={{}}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className=" border-t border-black/2 dark:border-white/10" />
+          <div className="overflow-hidden min-h-0">
+            <div className="p-8 flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="text-2xl font-bold py-3 px-2"
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <div className=" border-t border-black/2 dark:border-white/10" />
 
-            <MobileThemeToggle />
+              <MobileThemeToggle />
+            </div>
           </div>
         </div>
       </header>
