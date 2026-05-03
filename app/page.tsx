@@ -260,7 +260,7 @@ const App = () => {
       </section>
 
       {/*04*/}
-      <section id="rejestracja" className="pb-100 relative overflow-hidden">
+      <section id="rejestracja" className="pb-130 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col md:flex-row gap-16">
             <div className="w-24">
