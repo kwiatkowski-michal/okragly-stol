@@ -16,10 +16,6 @@ export default function Footer() {
                     </div>
                     <div className="flex flex-col space-y-8 text-sm">
                         <div className="space-y-2">
-                            <Link href="https://umarlestatuty.pl/polityka-prywatnosci" className="block hover:underline">
-                                Polityka prywatności
-                                <ExternalLinkIcon className="inline-block w-3 h-3 ml-1" />
-                            </Link>
                             <Link href="/rodo" className="block hover:underline">
                                 RODO
                             </Link>

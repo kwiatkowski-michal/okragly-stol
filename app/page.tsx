@@ -58,7 +58,7 @@ const App = () => {
       description: "Fundacja Civis Polonus zaprasza do wypełnienia ankiet, dzięki którym możecie już teraz zabrać głos na temat Strategii. Zebrane dane posłużą do opracowania raportu.",
       buttons: [
         { label: "Ankieta (wiek: 13-18)", link: "https://maszwplywnastrategie.pl/formularz-dla-mlodziezy/", icon: ExternalLinkIcon },
-        { label: "Ankieta (wiek: 19-29)", link: "https://maszwplywnastrategie.pl/formularz-dla-mlodych-doroslych/", icon: ExternalLinkIcon }
+        { label: "Ankieta (wiek: 19-29)", link: "https://maszwplywnastrategie.pl/formularz-dla-doroslych/", icon: ExternalLinkIcon }
       ]
     }
   ];
@@ -243,6 +243,7 @@ const App = () => {
                           <a
                             key={btnIdx}
                             href={btn.link || "#"}
+                            target="_blank"
                             className="w-full py-3 text-malina dark:text-white border border-malina dark:border-white rounded-full font-bold text-sm transition-all flex flex-row items-center justify-center gap-2 whitespace-nowrap"
                           >
                             <span className="mt-[2px]">{btn.label}</span> {Icon && <Icon size={17} />}
