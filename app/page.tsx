@@ -294,8 +294,8 @@ const App = () => {
           </div>
         </div>
         <div className="absolute top-0 right-[-130] opacity-40 sm:opacity-100 md:right-[-250] lg:right-[-350] sm:w-1/2 h-full pointer-events-none visible">
-          <img src="/kola_light.png" alt="Koła" className="dark:hidden h-200 object-contain max-w-none" />
-          <img src="/kola_dark.png" alt="Koła" className="hidden dark:block h-200 object-contain max-w-none" />
+          <img src="/kola_light.png" alt="Koła" className="dark:hidden h-190 object-contain max-w-none" />
+          <img src="/kola_dark.png" alt="Koła" className="hidden dark:block h-190 object-contain max-w-none" />
         </div>
       </section>
       {/*05*/}
