@@ -314,18 +314,19 @@ const App = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { label: "ORGANIZATOR", name: "Stowarzyszenie Umarłych Statutów", logo: "/sus.svg", link: "https://sus.org.pl" },
-              { label: "PARTNER", name: "Fundacja PZU", logo: "/pzu.svg", link: "https://fundacja.pzu.pl" },
-              { label: "PATRONAT HONOROWY", name: "Ministerstwo Edukacji Narodowej", logo: "/men.svg", link: "https://gov.pl/edukacja" },
-              { label: "PARTNER", name: "Narodowy Instytut Wolności", logo: "/niw.svg", link: "https://niw.gov.pl" }
+              { label: "ORGANIZATOR", name: "Stowarzyszenie Umarłych Statutów", logo: "/logos/sus/sus.svg", link: "https://sus.org.pl" },
+              { label: "PARTNER", name: "Fundacja PZU", logo: "/logos/pzu/pzu.svg", link: "https://fundacja.pzu.pl" },
+              { label: "PATRONAT HONOROWY", name: "Ministerstwo Edukacji Narodowej", logo: "/logos/men/men.svg", link: "https://gov.pl/edukacja" },
+              { label: "PARTNER", name: "Narodowy Instytut Wolności", logo: "/logos/niw/niw.svg", link: "https://niw.gov.pl" }
             ].map((partner, i) => (
               <a key={i} href={partner.link} target="_blank" rel="noopener noreferrer" className="h-full">
-                <div key={i} className="bg-white border border-white/5 shadow-xl shadow-gray-200/10 dark:shadow-white/5 p-8 h-full rounded-2xl text-center transition-shadow">
+                <div key={i} className="bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 p-8 h-full rounded-2xl text-center transition-shadow">
                   <div className="text-5xl mb-6 transition-all duration-500">
-                    <img src={partner.logo} alt={partner.name} className="h-20 w-full object-contain" />
+                    <img src={partner.logo} alt={partner.name} className="h-20 w-full object-contain dark:hidden" />
+                    <img src={partner.logo.replace('.svg', '_white.svg')} alt={partner.name} className="h-20 w-full object-contain hidden dark:block" />
                   </div>
                   <p className="text-[10px] font-bold text-malina tracking-[0.2em] mb-2 uppercase">{partner.label}</p>
-                  <h4 className="font-bold text-lg text-black leading-tight">{partner.name}</h4>
+                  <h4 className="font-bold text-lg text-black dark:text-white leading-tight">{partner.name}</h4>
                 </div>
               </a>
             ))}

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { IoIosClose, IoIosMenu } from 'react-icons/io';
 import { X } from 'lucide-react';
-import { ThemeToggle } from './ThemeToggle';
+import { ThemeToggle } from '../ThemeToggle';
 
 const navLinks = [
   { name: "O wydarzeniu", href: "/#o-wydarzeniu" },
