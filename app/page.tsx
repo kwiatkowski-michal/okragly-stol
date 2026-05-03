@@ -113,7 +113,7 @@ const App = () => {
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="space-y-6 leading-relaxed">
                   <p>
-                    W marcu 2026 roku Ministerstwo Edukacji Narodowej zainaugurowało prace nad Krajową Strategią Młodzieżową — pierwszym takim dokumentem od ponad dwóch dekad. Na jej podstawie rząd wyznaczy konkretne działania dotyczące ponad 5,7 osób – młodzieży i młodych dorosłych.</p>
+                    W marcu 2026 roku Ministerstwo Edukacji Narodowej zainaugurowało prace nad Krajową Strategią Młodzieżową — pierwszym takim dokumentem od ponad dwóch dekad. Na jej podstawie rząd wyznaczy konkretne działania dotyczące ponad 5,7 mln osób – młodzieży i młodych dorosłych.</p>
                   <p>
                     Ogólnopolski Okrągły Stół to jedno z kluczowych wydarzeń w procesie konsultacji społecznych. Organizujemy je wspólnie — Stowarzyszenie Umarłych Statutów (SUS) i Fundacja PZU — bo wierzymy, że strategia dla młodych musi powstawać z młodymi.
                   </p>
