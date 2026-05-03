@@ -16,12 +16,17 @@ export default function Footer() {
                     </div>
                     <div className="flex flex-col space-y-8 text-sm">
                         <div className="space-y-2">
-                            <Link href="https://umarlestatuty.pl/polityka-prywatnosci" className="block hover:underline opacity-90">
+                            <Link href="https://umarlestatuty.pl/polityka-prywatnosci" className="block hover:underline">
                                 Polityka prywatności
                                 <ExternalLinkIcon className="inline-block w-3 h-3 ml-1" />
                             </Link>
                             <Link href="/rodo" className="block hover:underline">
                                 RODO
+                            </Link>
+                            <hr />
+                            <Link href="https://www.gov.pl/web/edukacja/krajowa-strategia-mlodziezowa" target="_blank" rel="noopener noreferrer" className="block hover:underline">
+                                Krajowa Strategia Młodzieżowa
+                                <ExternalLinkIcon className="inline-block w-3 h-3 ml-1" />
                             </Link>
                         </div>
                         <div className="opacity-80 leading-relaxed pt-4">
@@ -29,13 +34,15 @@ export default function Footer() {
                             Umarłych Statutów
                         </div>
                     </div>
-                    <div className="flex flex-col items-start md:items-end space-y-8">
-                        <a href="https://sus.org.pl" target="_blank" rel="noopener noreferrer" className="h-12 w-auto opacity-100 invert brightness-0">
-                            <img src="/sus-navbar.svg" alt="SUS Logo" className="h-full" />
-                        </a>
-                        <a href="https://pzu.pl" target="_blank" rel="noopener noreferrer" className="h-10 w-auto opacity-100 invert brightness-0">
-                            <img src="/pzu-navbar.svg" alt="PZU Logo" className="h-full" />
-                        </a>
+                    <div className="flex flex-col items-start md:items-end">
+                        <div className="flex flex-col items-start space-y-8">
+                            <a href="https://sus.org.pl" target="_blank" rel="noopener noreferrer" className="h-12 w-auto opacity-100 invert brightness-0">
+                                <img src="/sus-navbar.svg" alt="SUS Logo" className="h-full" />
+                            </a>
+                            <a href="https://pzu.pl" target="_blank" rel="noopener noreferrer" className="h-10 w-auto opacity-100 invert brightness-0">
+                                <img src="/pzu-navbar.svg" alt="PZU Logo" className="h-full" />
+                            </a>
+                        </div>
                     </div>
 
                 </div>
