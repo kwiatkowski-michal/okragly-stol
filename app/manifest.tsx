@@ -7,6 +7,10 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Stowarzyszenie Umarłych Statutów x Fundacja PZU | Pierwsze w Polsce od ponad 20 lat konsultacje na rzecz Krajowej Strategii Młodzieżowej. Twój głos ma realny wpływ.',
     start_url: '/',
     display: 'standalone',
+    dir: 'ltr',
+    lang: 'pl',
+    id: 'okragly-stol',
+    orientation: 'portrait',
     background_color: '#FFFBFB',
     theme_color: '#F2313E',
     icons: [

@@ -70,6 +70,9 @@ export default function RootLayout({
       className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased scroll-smooth scroll-pt-30`}
     >
       <head>
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
         <link
           rel="icon"
           href="/icons/192.png"
