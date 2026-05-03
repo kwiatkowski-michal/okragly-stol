@@ -1,9 +1,10 @@
 "use client";
 import './globals.css';
 import React, { useState } from 'react';
-import { MdOutlineArrowForwardIos } from 'react-icons/md';
-import { IoIosBus, IoIosDocument, IoIosDownload } from 'react-icons/io';
+import { MdLink, MdOutlineArrowForwardIos } from 'react-icons/md';
+import { IoIosBus, IoIosDocument, IoIosDownload, IoMdDocument, IoMdGlobe } from 'react-icons/io';
 import { useTheme } from 'next-themes';
+import { ExternalLinkIcon } from 'lucide-react';
 
 const App = () => {
   const { theme, setTheme } = useTheme();
@@ -30,9 +31,29 @@ const App = () => {
     }
   ];
   const downloads = [
-    { title: "Diagnoza Młodzieży 2026", description: "Kompleksowy raport MEN i Polskiego Towarzystwa Polityki Społecznej. Analiza ponad 200 badań dotyczących życia młodych ludzi w Polsce.", link: "/sus.org.pl" },
-    { title: "Diagnoza Młodzieży 2026", description: "Kompleksowy raport MEN i Polskiego Towarzystwa Polityki Społecznej. Analiza ponad 200 badań dotyczących życia młodych ludzi w Polsce.", link: "/sus.org.pl" },
-    { title: "Diagnoza Młodzieży 2026", description: "Kompleksowy raport MEN i Polskiego Towarzystwa Polityki Społecznej. Analiza ponad 200 badań dotyczących życia młodych ludzi w Polsce.", link: "/sus.org.pl" }
+    {
+      title: "Diagnoza Młodzieży 2026",
+      description: "Raport przygotowany przez Polskie Towarzystwo Polityki Społecznej. Stanowi analizę ponad 200 badań dotyczących życia młodych ludzi w Polsce.",
+      buttons: [
+        { label: "Diagnoza", link: "https://www.gov.pl/attachment/947513a7-db19-446d-b9ea-774dcf631333", icon: IoMdDocument },
+        { label: "Streszczenie Diagnozy", link: "https://www.gov.pl/attachment/805476f9-d5c0-486c-93bc-ab1159063d28", icon: IoMdDocument }
+      ]
+    },
+    {
+      title: "Masz wpływ na strategię",
+      description: "Fundacja Civis Polonus uruchomiła serwis „Masz wpływ na strategię”. Pokazuje on, jak w dialog o Strategii mogą włączyć się młodzi ludzie i szkoły.",
+      buttons: [
+        { label: "Zobacz stronę", link: "https://maszwplywnastrategie.pl/", icon: ExternalLinkIcon }
+      ]
+    },
+    {
+      title: "Wypełnij ankietę",
+      description: "Fundacja Civis Polonus zaprasza do wypełnienia ankiet, dzięki którym możecie już teraz zabrać głos na temat Strategii. Zebrane dane posłużą do opracowania raportu.",
+      buttons: [
+        { label: "Ankieta (wiek: 13-18)", link: "https://maszwplywnastrategie.pl/formularz-dla-mlodziezy/", icon: ExternalLinkIcon },
+        { label: "Ankieta (wiek: 19-29)", link: "https://maszwplywnastrategie.pl/formularz-dla-mlodych-doroslych/", icon: ExternalLinkIcon }
+      ]
+    }
   ];
 
   return (
@@ -48,7 +69,7 @@ const App = () => {
               Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej
             </h1>
             <p className="text-xl mb-10 leading-relaxed">
-              Pierwsze w Polsce od ponad 20 lat konsultacje na rzecz Krajowej Strategii Młodzieżowej.<br />Twój głos ma realny wpływ.
+              Polska tworzy pierwszą od ponad 20 lat Krajową Strategię Młodzieżową. Weź udział w konsultacjach – Twój głos ma realny wpływ!
             </p>
 
             <div className="rounded-lg text-sm gap-8 mb-12 pt-8">
@@ -88,23 +109,31 @@ const App = () => {
               <span className="text-malina font-bold text-sm tracking-widest uppercase mb-2 block">
                 — O WYDARZENIU
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8">Nic o nich bez nich.</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">Nic o młodych bez młodych</h2>
               <div className="grid md:grid-cols-2 gap-12">
-                <div className="space-y-6 black-80 leading-relaxed">
+                <div className="space-y-6 leading-relaxed">
                   <p>
-                    W marcu 2026 roku Ministerstwo Edukacji Narodowej zainaugurowało prace nad Krajową Strategią Młodzieżową — pierwszym takim dokumentem od ponad dwóch dekad. Na jej podstawie rząd wyznaczy konkretne działania dotyczące ponad 5,7 miliona młodych ludzi w Polsce. </p>
+                    W marcu 2026 roku Ministerstwo Edukacji Narodowej zainaugurowało prace nad Krajową Strategią Młodzieżową — pierwszym takim dokumentem od ponad dwóch dekad. Na jej podstawie rząd wyznaczy konkretne działania dotyczące ponad 5,7 osób – młodzieży i młodych dorosłych.</p>
                   <p>
                     Ogólnopolski Okrągły Stół to jedno z kluczowych wydarzeń w procesie konsultacji społecznych. Organizujemy je wspólnie — Stowarzyszenie Umarłych Statutów (SUS) i Fundacja PZU — bo wierzymy, że strategia dla młodych musi powstawać z młodymi.
                   </p>
-                  <p>Podczas spotkania uczniowie, studenci, samorządowcy, eksperci i przedstawiciele organizacji pozarządowych zasiądą przy jednym stole, by dyskutować o tym, co naprawdę zmienić w obszarach edukacji, zdrowia psychicznego, rynku pracy i aktywności obywatelskiej. Wnioski trafią bezpośrednio do Ministerstwa Edukacji Narodowej.</p>
+                  <p>Podczas spotkania uczniowie, studenci, młodzi dorośli, przedstawiciele organizacji pozarządowych  i osoby pracujące z młodzieżą zasiądą przy jednym stole, by dyskutować o tym, co zmienić w takich obszarach, jak edukacja, zdrowie psychiczne, rynek pracy czy zaangażowanie społeczne. Wnioski z debaty trafią bezpośrednio do Ministerstwa Edukacji Narodowej.</p>
                   <div className="pl-10 mt-20 border-l-4 border-malina rounded-r-2xl">
-                    <h3 className="black-100 text-lg font-bold mb-2">„Nic o nich bez nich. I to powinno nam przyświecać przez najbliższe miesiące pracy.”</h3>
+                    <h3 className="black-100 text-lg font-bold mb-2">„Nic o nich bez nich. I to powinno nam przyświecać przez najbliższe miesiące pracy”</h3>
                     <p className="text-md font-light black-60">— Barbara Nowacka, Minister Edukacji Narodowej</p>
                   </div>
                 </div>
-                <div className="pl-10 lg:ml-20 border-l-4 border-malina rounded-r-2xl self-start">
-                  <p className="text-malina font-bold text-sm tracking-widest uppercase mb-2 block">DLACZEGO TO WAŻNE?</p>
-                  <p className="text-sm font-light black-60">Raport „Diagnoza Młodzieży 2026" pokazuje, że 60% nastolatków żyje w chronicznym stresie, a 40% wykazuje objawy depresyjne. To obraz, którego nie można ignorować — i który wymaga systemowej odpowiedzi.</p>
+                <div className="flex flex-col gap-10 self-start">
+                  <div className="pl-10 lg:ml-20 border-l-4 border-malina rounded-r-2xl">
+                    <p className="text-malina font-bold text-sm tracking-widest uppercase mb-2 block">DLACZEGO TO WAŻNE?</p>
+                    <p className="text-sm font-light black-60">Konsultacje Strategii mają charakter otwarty i włączający. Zaproszeni są do nich młodzi ludzi i eksperci, którzy mogą zgłaszać swoje opinie, doświadczenia i propozycje rozwiązań. To realny wpływ na kształt Strategii.
+                    </p>
+                  </div>
+                  <div className="pl-10 lg:ml-20 border-l-4 border-malina rounded-r-2xl">
+                    <p className="text-malina font-bold text-sm tracking-widest uppercase mb-2 block">Co mówi Diagnoza Młodzieży?</p>
+                    <p className="text-sm font-light black-60">Sytuacja zawodowa młodych nie sprzyja usamodzielnianiu się. Połowa młodych dorosłych w wieku 25–34 lat nadal mieszka z rodzicami. Wysokie koszty najmu i zakupu mieszkań w dużych miastach pochłaniają od 35% do nawet 55% dochodu. Państwo musi znaleźć odpowiedź na te wyzwania.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -123,21 +152,21 @@ const App = () => {
               <span className="text-malina font-bold text-sm tracking-widest uppercase mb-2 block">
                 — PROGRAM
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-12">Agenda dnia</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-12">Agenda Okrągłego Stołu</h2>
 
               <div className="space-y-12">
                 <p>Agenda zostanie ogłoszona w najbliższym czasie.</p>
                 {/* {agendaItems.map((item, idx) => (
                   <div key={idx} className="flex flex-col md:flex-row gap-6 md:gap-16 border-b border-gray-200 pb-12 last:border-0">
                     <div className="md:w-32">
-                      <span className="text-2xl font-bold black-80">{item.time}</span>
+                      <span className="text-2xl font-bold">{item.time}</span>
                     </div>
                     <div className="flex-1">
                       <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-wider mb-4 text-malina border border-malina-100">
                         {item.tag}
                       </span>
                       <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                      <p className="black-80 leading-relaxed max-w-2xl">{item.description}</p>
+                      <p className= leading-relaxed max-w-2xl">{item.description}</p>
                     </div>
                   </div>
                 ))} */}
@@ -188,24 +217,32 @@ const App = () => {
             </div>
             <div className="flex-1">
               <span className="dark:text-malina text-white font-bold text-sm tracking-widest uppercase mb-2 block">
-                — DO POBRANIA
+                — Materiały dodatkowe
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">Materiały i strategia</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-12">Dowiedz się więcej</h2>
               <div className="grid lg:grid-cols-3 gap-8">
                 {downloads.map((doc, idx) => (
-                  <div key={idx} className="bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-3xl p-6">
+                  <div key={idx} className="bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-3xl p-6 flex flex-col h-full">
                     <div className="w-12 h-12 flex items-center justify-center mb-6">
                       <IoIosDocument className="w-25 h-25 text-malina" />
                     </div>
                     <span className="text-malina font-bold text-[13px] tracking-widest block uppercase">RAPORT</span>
                     <h3 className="text-xl font-bold  mb-4">{doc.title}</h3>
                     <p className=" text-md mb-8 leading-relaxed">{doc.description}</p>
-                    <a
-                      href={doc.link || "#"}
-                      className="w-full py-3 text-malina dark:text-white border border-malina dark:border-white rounded-full font-bold text-sm transition-all flex flex-row items-center justify-center gap-2 whitespace-nowrap"
-                    >
-                      <span className="mt-[2px]">Pobierz</span> <IoIosDownload size={20} />
-                    </a>
+                    <div className="flex flex-col gap-3 mt-auto">
+                      {doc.buttons?.map((btn, btnIdx) => {
+                        const Icon = btn.icon;
+                        return (
+                          <a
+                            key={btnIdx}
+                            href={btn.link || "#"}
+                            className="w-full py-3 text-malina dark:text-white border border-malina dark:border-white rounded-full font-bold text-sm transition-all flex flex-row items-center justify-center gap-2 whitespace-nowrap"
+                          >
+                            <span className="mt-[2px]">{btn.label}</span> {Icon && <Icon size={17} />}
+                          </a>
+                        );
+                      })}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -227,12 +264,12 @@ const App = () => {
                 — ZAPISY
               </span>
               <h2 className="text-4xl md:text-5xl font-bold mb-8">Zarejestruj się</h2>
-              <div className="max-w-2xl black-80 mb-12 space-y-6">
-                <p>Udział w Ogólnopolskim Okrągłym Stole jest bezpłatny. Zapraszamy uczniów, studentów, przedstawicieli młodzieżowych rad, samorządów, organizacji pozarządowych, instytucji publicznych i środowisk akademickich.</p>
-                <p className="font-medium black-80">Liczba miejsc jest ograniczona. Po rejestracji otrzymasz potwierdzenie e-mailem wraz z szczegółami logistycznymi.</p>
-                <p>Rejestracja aktywna od 6 maja 2026 r.</p>
+              <div className="max-w-2xl mb-12 space-y-6">
+                <p>Zapraszamy uczniów, studentów, przedstawicieli młodzieżowych rad i organizacji pozarządowych, pracujących z młodymi. Dla każdego podmiotu przewidujemy miejsce dla jednego przedstawiciela.
+                </p>
+                <p className="font-medium">Liczba miejsc jest ograniczona. Po rejestracji otrzymasz potwierdzenie e-mailem wraz z szczegółami logistycznymi.</p>
                 <a href="#" className="inline-flex items-center gap-3 px-10 py-4 bg-malina text-white font-bold rounded-full hover:bg-malinaDark hover:shadow-none shadow-xl shadow-malina/30 transition-all">
-                  Zarejestruj się <MdOutlineArrowForwardIos size={16} />
+                  Rejestracja od 6 maja 2026 r. <MdOutlineArrowForwardIos size={16} />
                 </a>
               </div>
 
@@ -242,13 +279,13 @@ const App = () => {
                     <IoIosBus className="text-malina w-10 h-10" />
                   </div>
                   <h2 className="text-xl font-bold black-100">
-                    Zwrot kosztów przejazdu
+                    Zwrot kosztów
                   </h2>
                 </div>
-                <p className="black-80 leading-relaxed mb-8 text-lg">
-                  Dla uczestników przyjeżdżających z innych miast organizatorzy{" "}
-                  <span className="font-bold black-80">zapewniają zwrot kosztów przejazdu.</span>
+                <p className="leading-relaxed mb-8 text-lg">
+                  Dla uczestników spoza Warszawy Partner Okrągłego Stołu – Narodowy Instytut Wolności umożliwia ubieganie się o zwrot kosztów przejazdu i noclegu.
                 </p>
+                <p className="leading-relaxed mb-8 text-lg font-bold">Dofinansowanie udzielane będzie w ramach konkursu PROO 5.</p>
                 <a href="/zwrot-kosztow" className="inline-flex items-center gap-3 px-8 py-3 border-2 border-malina rounded-full text-malina font-semibold transition-all hover:bg-malina hover:text-white">
                   Jak skorzystać? <MdOutlineArrowForwardIos size={16} />
                 </a>
