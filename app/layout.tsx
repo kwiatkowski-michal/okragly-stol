@@ -65,10 +65,16 @@ export default function RootLayout({
   return (
     <html
       suppressHydrationWarning
+
       lang="pl"
       className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased scroll-smooth scroll-pt-30`}
     >
       <head>
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="maximum-scale=1, user-scalable=no"
+        />
         <meta property="og:image" content="/512.png" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
