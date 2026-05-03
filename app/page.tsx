@@ -2,7 +2,7 @@
 import './globals.css';
 import React, { useState } from 'react';
 import { MdLink, MdOutlineArrowForwardIos } from 'react-icons/md';
-import { IoIosBus, IoIosDocument, IoIosDownload, IoMdDocument, IoMdGlobe } from 'react-icons/io';
+import { IoIosBus, IoIosClipboard, IoIosDocument, IoIosDownload, IoMdDocument, IoMdGlobe } from 'react-icons/io';
 import { useTheme } from 'next-themes';
 import { ExternalLinkIcon } from 'lucide-react';
 
@@ -33,6 +33,8 @@ const App = () => {
   const downloads = [
     {
       title: "Diagnoza Młodzieży 2026",
+      mainIcon: IoIosDocument,
+      short: "Raport",
       description: "Raport przygotowany przez Polskie Towarzystwo Polityki Społecznej. Stanowi analizę ponad 200 badań dotyczących życia młodych ludzi w Polsce.",
       buttons: [
         { label: "Diagnoza", link: "https://www.gov.pl/attachment/947513a7-db19-446d-b9ea-774dcf631333", icon: IoMdDocument },
@@ -41,13 +43,18 @@ const App = () => {
     },
     {
       title: "Masz wpływ na strategię",
+      mainIcon: IoMdGlobe,
+      short: "WWW",
       description: "Fundacja Civis Polonus uruchomiła serwis „Masz wpływ na strategię”. Pokazuje on, jak w dialog o Strategii mogą włączyć się młodzi ludzie i szkoły.",
       buttons: [
-        { label: "Zobacz stronę", link: "https://maszwplywnastrategie.pl/", icon: ExternalLinkIcon }
+        { label: "Strona główna", link: "https://maszwplywnastrategie.pl/", icon: ExternalLinkIcon },
+        { label: "Lekcje i debaty", link: "https://maszwplywnastrategie.pl/lekcje-i-debaty/", icon: ExternalLinkIcon }
       ]
     },
     {
       title: "Wypełnij ankietę",
+      mainIcon: IoIosClipboard,
+      short: "Ankieta",
       description: "Fundacja Civis Polonus zaprasza do wypełnienia ankiet, dzięki którym możecie już teraz zabrać głos na temat Strategii. Zebrane dane posłużą do opracowania raportu.",
       buttons: [
         { label: "Ankieta (wiek: 13-18)", link: "https://maszwplywnastrategie.pl/formularz-dla-mlodziezy/", icon: ExternalLinkIcon },
@@ -224,9 +231,9 @@ const App = () => {
                 {downloads.map((doc, idx) => (
                   <div key={idx} className="bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-3xl p-6 flex flex-col h-full">
                     <div className="w-12 h-12 flex items-center justify-center mb-6">
-                      <IoIosDocument className="w-25 h-25 text-malina" />
+                      <doc.mainIcon className="w-25 h-25 text-malina" />
                     </div>
-                    <span className="text-malina font-bold text-[13px] tracking-widest block uppercase">RAPORT</span>
+                    <span className="text-malina font-bold text-[13px] tracking-widest block uppercase">{doc.short}</span>
                     <h3 className="text-xl font-bold  mb-4">{doc.title}</h3>
                     <p className=" text-md mb-8 leading-relaxed">{doc.description}</p>
                     <div className="flex flex-col gap-3 mt-auto">
