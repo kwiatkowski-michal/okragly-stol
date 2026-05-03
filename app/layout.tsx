@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Manrope, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
@@ -15,7 +14,7 @@ const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
 });
 import type { Viewport } from 'next'
-import { ExternalLinkIcon } from "lucide-react";
+
 import Footer from "./components/footer";
 
 export const viewport: Viewport = {
@@ -29,28 +28,28 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://okraglystol.sus.org
 export const metadata: Metadata = {
 
   metadataBase: new URL(baseUrl),
-  openGraph: {
-    title: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
-    description: 'Stowarzyszenie Umarłych Statutów x Fundacja PZU | Pierwsze w Polsce od ponad 20 lat konsultacje na rzecz Krajowej Strategii Młodzieżowej. Twój głos ma realny wpływ.',
-    url: '/',
-    siteName: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
-    images: [
-      {
-        url: '/og.png',
-        width: 800,
-        height: 600,
-        alt: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
-      },
-      {
-        url: '/og-alt.png',
-        width: 1800,
-        height: 1600,
-        alt: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
-      },
-    ],
-    locale: 'pl_PL',
-    type: 'website',
-  },
+  // openGraph: {
+  //   title: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
+  //   description: 'Stowarzyszenie Umarłych Statutów x Fundacja PZU | Pierwsze w Polsce od ponad 20 lat konsultacje na rzecz Krajowej Strategii Młodzieżowej. Twój głos ma realny wpływ.',
+  //   url: '/',
+  //   siteName: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
+  //   images: [
+  //     {
+  //       url: '/og.png',
+  //       width: 800,
+  //       height: 600,
+  //       alt: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
+  //     },
+  //     {
+  //       url: '/og-alt.png',
+  //       width: 1800,
+  //       height: 1600,
+  //       alt: 'Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej',
+  //     },
+  //   ],
+  //   locale: 'pl_PL',
+  //   type: 'website',
+  // },
   title: {
     default: "Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej",
     template: "%s | Ogólnopolski Okrągły Stół ds. Strategii Młodzieżowej",
@@ -70,22 +69,11 @@ export default function RootLayout({
       className={`${manrope.variable} ${bricolageGrotesque.variable} h-full antialiased scroll-smooth scroll-pt-30`}
     >
       <head>
+        <meta property="og:image" content="/512.png" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-
-        <link
-          rel="icon"
-          href="/icons/192.png"
-          type="image/png"
-          sizes="192x192"
-        />
-        <link
-          rel="apple-touch-icon"
-          href="/icons/apple-icon.png"
-          type="image/png"
-          sizes="760x760"
-        />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
       </head>
       <body className="">
         <ThemeProvider>

@@ -15,22 +15,22 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#F2313E',
     icons: [
       {
-        src: '/icons/512.png',
+        src: '/512.png',
         sizes: '512x512',
         type: 'image/png',
-        purpose: "maskable"
+        purpose: "any"
       },
       {
-        src: '/icons/192.png',
-        sizes: '192x192',
+        src: '/128.png',
+        sizes: '128x128',
         type: 'image/png',
         purpose: "any"
       },
       {
-        src: '/favicon.ico',
-        sizes: '128x128',
-        type: 'image/x-icon',
-        purpose: "any"
+        src: '/maskable.png',
+        sizes: '192x192',
+        type: 'image/png',
+        purpose: "maskable"
       }
     ],
   }
