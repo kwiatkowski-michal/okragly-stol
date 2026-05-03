@@ -230,7 +230,7 @@ const App = () => {
               <div className="grid lg:grid-cols-3 gap-8">
                 {downloads.map((doc, idx) => (
                   <div key={idx} className="bg-white/75 dark:bg-white/10 backdrop-blur-xs border border-white/15 dark:shadow-white/4 shadow-lg shadow-black/5 inset-shadow-md inset-shadow-black/13 dark:inset-shadow-white/10 rounded-3xl p-6 flex flex-col h-full">
-                    <div className="w-12 h-12 flex items-center justify-center mb-6">
+                    <div className="w-15 h-15 flex items-center justify-center mb-8 mt-[-5px] ml-[-8px]">
                       <doc.mainIcon className="w-25 h-25 text-malina" />
                     </div>
                     <span className="text-malina font-bold text-[13px] tracking-widest block uppercase">{doc.short}</span>
